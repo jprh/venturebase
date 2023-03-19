@@ -1,0 +1,12 @@
+{
+  "bootstrap4": {
+    "basic": {
+      "primary": "#ff6e30",
+      "link-color": "#ff6e30",
+      "danger": "#FF5C4B",
+      "info": "#0516F2",
+      "success": "#2EF558"
+    },
+    "advanced": {}
+  }
+}

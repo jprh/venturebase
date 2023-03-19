@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="ac:route" content="/blog/:article">
+    <base href="/">
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="utf-8">
+    <title>Blog - Venturebase</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-logo-vb.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-36x36-vb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-12x12-vb.png">
+    <link rel="manifest" href="https://solo/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pin-tab-vb.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:card" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:site" content="@venturebase">
+    <meta name="twitter:title" content="Venturebase">
+    <meta name="twitter:description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:creator" content="@venturebase">
+    <meta name="twitter:image" content="https:/img/Logo.png">
+    <meta property="og:title" content="Venturebase">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="http://venturebase.us">
+    <meta property="og:image" content="https:/img/Logo.png">
+    <meta property="og:description" content="Ayudamos a comenzar empresas en USA">
+    <meta property="og:site_name" content="Venturebase">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" integrity="sha384-NUDU7Qr8dfscXBIhA0px/bRl3cgNrOT9l/WPm15DzH5xnBs4fL4vgRiXURs98/ID" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/dmxFramework7_icons/css/framework7-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <!-- <link rel="stylesheet" href="../muse-dashboard/assets/css/theme.min.css" /> -->
+    <link rel="stylesheet" media="all" href="/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../muse-dashboard/assets/css/theme.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" media="all" href="/css/blog.css">
+    <link rel="stylesheet" media="all" href="/css/app-solo.css">
+
+    <script defer="" src="/js/bundle.js"></script>
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGWHE7XRS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-ZLGWHE7XRS');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216721706-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-216721706-1');
+    </script>
+
+    <!-- Hotjar Tracking Code for http://venturebase.us/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2776939,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20041373.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script src="/dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxSummernote/dmxSummernote.js" defer=""></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/medium-editor.css" />
+    <script src="/dmxAppConnect/dmxMediumEditor/medium-editor.js"></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
+    <script src="/dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js"></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/themes/default.css" />
+    <script src="/dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxValidator/dmxValidator.css" />
+    <script src="/dmxAppConnect/dmxValidator/dmxValidator.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Toasts/dmxBootstrap5Toasts.js"></script>
+</head>
+
+<body is="dmx-app" id="index" class="blog-post-template bg-gray-100" data-atm-ext-installed="0.15.2" data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="" cz-shortcut-listen="true" data-aos-easing="ease-out" data-aos-duration="400" data-aos-delay="0">
+    <div is="dmx-bs5-toasts" id="toasts1"></div>
+    <dmx-data-view id="data_view1" dmx-bind:data="blogarticlefiltered.data.query"></dmx-data-view>
+
+    <dmx-array id="arr1" dmx-bind:items="serverconnect2.data.query[0].Tags.split(', ')"></dmx-array>
+    <dmx-serverconnect id="blogarticlefiltered" url="/api/blog-articles-filtred" dmx-param:article="query.article"></dmx-serverconnect>
+    <dmx-serverconnect id="serverconnect3" url="/api/newsletter_submission"></dmx-serverconnect>
+    <dmx-query-manager id="article"></dmx-query-manager>
+
+    <dmx-serverconnect id="serverconnect2" url="/api/blog-articles-recommendations" dmx-param:article="query.article"></dmx-serverconnect>
+    <div is="dmx-browser" id="browser2"></div>
+
+    <%- await include('/partials/navbar', Object.assign({}, locals)) %>
+        <div style="margin-top: 120px;" class="page container-fluid">
+            <div style="/* margin-top: 120px */" class="main__center container-fluid center ">
+
+                <section class="muse-section py-5" style="/* margin-top: 120px */">
+                    <div class="row pb-3 align-items-center">
+                        <div class="col-md-8">
+                            <h1 class="mb-2">{{blogarticlefiltered.data.query[0].Title}}&nbsp;</h1>
+                            <div class="d-flex align-items-center mb-2 small text-gray-600">
+                                <span class="avatar avatar-xs border-0">
+                                    <img src="https://fabrx.co/muze/assets/img/blog/avatar11.png" class="rounded-circle" alt="Avatar"></span>
+                                <span class="ml-2 style98">{{blogarticlefiltered.data.query[0]['Author name']}} </span>
+                                <span dmx-html="blogarticlefiltered.data.query[0]['Publishing date'].formatDate('MMM, dd, yyyy')"></span>
+                                <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" class="btn-sm btn_orange btn-sm ms-4">
+                                    <span class="pr-1">Compartir</span>
+                                    <svg class="ml-1" data-name="icons/tabler/share" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
+                                        <rect data-name="Icons/Tabler/Share background" width="16" height="16" fill="none"></rect>
+                                        <path d="M9.846,12.923a3.07,3.07,0,0,1,.1-.768L5.516,9.874a3.077,3.077,0,1,1,0-3.748L9.943,3.845a3.084,3.084,0,1,1,.541,1.106L6.057,7.232a3.087,3.087,0,0,1,0,1.537l4.427,2.281a3.075,3.075,0,1,1-.638,1.874Zm1.231,0a1.846,1.846,0,1,0,.2-.84q-.011.028-.025.055l-.014.025A1.836,1.836,0,0,0,11.077,12.923ZM1.231,8a1.846,1.846,0,0,0,3.487.845.623.623,0,0,1,.027-.061l.017-.031a1.845,1.845,0,0,0,0-1.508l-.017-.031a.622.622,0,0,1-.027-.061A1.846,1.846,0,0,0,1.231,8ZM12.923,4.923a1.846,1.846,0,1,0-1.682-1.086l.013.024q.014.027.025.056A1.848,1.848,0,0,0,12.923,4.923Z" fill="#ffffff"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center mb-2 small text-gray-600 justify-content-center style87 visually-hidden">
+                                <img class="style86" src="/img/options-pic@2x.png">
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="my-2 bg-gray-200">
+                    <div class="row pt-3 style102">
+                        <div class="col-lg-8 col style121">
+                            <figure class="mb-2 mb-md-2 pb-md-2 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                <img class="rounded-12 w-100" alt="Blog" dmx-bind:src="blogarticlefiltered.data.query[0]['Banner img']">
+                                <figcaption class="mt-4">
+                                </figcaption>
+                            </figure>
+                            <div class="d-flex flex-column article-body" dmx-html="blogarticlefiltered.data.query[0]['Copy body']"></div>
+
+                        </div>
+                        <div class="col-lg-4 style113">
+                            <%- await include('/partials/subscribe-box-lateral', Object.assign({}, locals)) %>
+                                <div class="bg-white rounded-12 shadow-dark-80 p-4 mb-4 mb-md-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="p-md-2 d-flex flex-column">
+                                        <h4 class="mb-3 pb-1">Publicaciones Recientes&nbsp;</h4>
+                                        <div class="row" is="dmx-repeat" id="repeatpublicacionesrecientes" dmx-bind:repeat="serverconnect2.data.query">
+                                            <figure class="border-bottom border-gray-200 mb-4 ">
+                                                <a class="muse-animation rounded-6" dmx-bind:href="'blog/'+slug"><img class="rounded-6 w-100" alt="Blog" dmx-bind:src="_['Banner img']"></a>
+                                                <figcaption class="mt-2">
+                                                    <h6 class="lh-base mb-3 card-heading"><a href="#" class="text-black-600" dmx-text="Title" dmx-bind:href="'blog/'+slug">My awesome safari in Lahbab Desert, United Arab Emirates</a></h6>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-12 shadow-dark-80 p-md-4 p-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                    <h4 class="mb-2">Tags</h4>
+                                    <div class="tag-list row ps-0 pe-0">
+                                        <div class="col-6" dmx-repeat:rt="arr1.items"><a href="#" class="btn btn-sm btn-outline-dark" dmx-text="$value">Affordable</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+                <hr class="bg-gray-200 style60">
+
+                <section class="muse-section py-4 py-md-5 aos-init" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="mb-4 mb-md-5">Deje sus comentarios</h2>
+                    <div class="rounded-12 shadow-dark-80 bg-white p-4 p-md-5">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4 mb-md-5">
+                                        <label class="form-label form-label-lg">Nombre Completo</label>
+                                        <input type="text" class="form-control form-control-xl" placeholder="Nombre Completo">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4 mb-md-5">
+                                        <label class="form-label form-label-lg">&nbsp;Correo Electrónico</label>
+                                        <input type="text" class="form-control form-control-xl" placeholder="muse@fabrx.co">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-4 mb-md-5">
+                                        <label class="form-label form-label-lg">Comentario</label>
+                                        <textarea class="form-control form-control-xl" rows="6" placeholder="Deje su comentario aquí"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pt-0 pt-md-3 text-right mb-2">
+                                    <button class="btn btn-xl btn_orange px-4 fs-16">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="muse-section  pt-4 pb-4">
+                    <h2 class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="100">También le puede interesar</h2>
+                    <div class="features__wrap">
+                        <div is="dmx-repeat" id="repeat3" dmx-bind:repeat="serverconnect2.data.query.top(3)" class="row style60 options__list mt-xl-0">
+                            <div class="col-sm-6 col-lg-4 mt-0 mt-md-4 mb-0 mb-md-4 aos-init  style23 col" data-aos="fade-up" data-aos-delay="100">
+                                <figure class="card muse-card h-100 transition-3d-hover rounded-12">
+                                    <a class="muse-animation" dmx-bind:href="'blog/'+slug" style="/* height: 250px */">
+                                        <img class="img-fluid w-100 img-card-recomm" alt="Blog" dmx-bind:src="_['Banner img']">
+                                    </a>
+                                    <figcaption class="p-4">
+                                        <h5 class="title-card"><a class="stretched-link mb-0 title-card" dmx-bind:href="'blog/'+slug" dmx-text="Title">10 beaches you must visit</a></h5>
+                                        <p dmx-text="Summary.trunc(200, true, '...')" class="p-card">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 4…</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <%- await include('/partials/comience-ahora-banner', Object.assign({}, locals)) %>
+                <%- await include('/partials/contact-modal', Object.assign({}, locals)) %>
+                    <%- await include('/partials/footer', Object.assign({}, locals)) %>
+        </div>
+
+        <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/swiper/swiper-bundle.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/lodash/lodash.min.js" type="text/javascript"></script>
+        <script src="../../assets/vendor/aos/dist/aos.js" type="text/javascript"></script>
+        <script src="../../assets/js/theme-custom.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            //Muse AOS Animation Javascript
+            AOS.init ({
+            offset: 0,
+            once: true,
+            easing: 'ease-out'
+            });
+        
+            //Muse Swiper Clients Slider JavaScript
+            var swiper = new Swiper('.swiper-clients', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                },
+                480: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                },
+                768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                },
+                1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                },
+            }
+            });
+        
+            //Muse Swiper Product Listing Slider JavaScript
+            var swiper = new Swiper('.swiper-list', {
+            slidesPerView: 1,
+            spaceBetween: 28,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            });
+        
+            //Muse Swiper Product Listing Slider JavaScript
+            var swiper = new Swiper('.swiper-list2', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            keyboard: {
+                enabled: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            });
+        
+            //Muse Swiper Navication Slider JavaScript
+            var swiper = new Swiper('.swiper-navication', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            });
+        
+            // Muse Switch Toggle JavaScript
+            var elem = document.getElementById("switch-content");
+            function toggleClass(){
+            elem.classList.toggle("switch-hide");
+            }
+        </script>
+
+
+        <dmx-value id="var1"></dmx-value>
+
+        <!-- Using App Connect Expressions in JavaScript Functions -->
+        <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+          runJS: {function: "myFunction", output: true}
+        }</script>
+        <dmx-value id="var2" dmx-bind:value="'JP Rules The Land '"></dmx-value>
+        <dmx-serverconnect id="serverconnect1" url="api/query-faq-db"></dmx-serverconnect>
+        <dmx-smooth-scroll id="scroll1"></dmx-smooth-scroll>
+        <div is="dmx-browser" id="browser1"></div>
+        <script>
+            console.log(localStorage.getItem('darkMode'));
+        if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+        </script>
+
+
+        <!-- scripts-->
+
+        <script src="/js/swiper-bundle.min.js"></script>
+        <script src="/js/svg4everybody.min.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/js/aos.js"></script>
+        <script src="/js/app-solo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Using App Connect Expressions in JavaScript Functions -->
+        <script>
+            function myFunction() {
+                    var myVar = dmx.parse("var2.value");
+                    console.log(myVar);
+                }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="ac:route" content="/cuenta-bancaria/:slug?">
+    <base href="/">
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="utf-8">
+    <title>Cuenta Bancaria - Venturebase</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-logo-vb.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-36x36-vb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-12x12-vb.png">
+    <link rel="manifest" href="https://solo/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pin-tab-vb.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:card" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:site" content="@venturebase">
+    <meta name="twitter:title" content="Venturebase">
+    <meta name="twitter:description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:creator" content="@venturebase">
+    <meta name="twitter:image" content="https:/img/Logo.png">
+    <meta property="og:title" content="Venturebase">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="http://venturebase.us">
+    <meta property="og:image" content="https:/img/Logo.png">
+    <meta property="og:description" content="Ayudamos a comenzar empresas en USA">
+    <meta property="og:site_name" content="Venturebase">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" integrity="sha384-NUDU7Qr8dfscXBIhA0px/bRl3cgNrOT9l/WPm15DzH5xnBs4fL4vgRiXURs98/ID" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/dmxFramework7_icons/css/framework7-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../muse-dashboard/assets/css/theme.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" media="all" href="/css/app-solo.css">
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script defer="" src="/js/bundle.js"></script>
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGWHE7XRS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-ZLGWHE7XRS'{
+        'linker': {
+            'domains': [
+                'venturebase.spp.io',
+                'clients.venturebase.us'
+            ]
+        }
+      });    
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216721706-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-216721706-1');
+    </script>
+
+    <!-- Hotjar Tracking Code for http://venturebase.us/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2776939,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20041373.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script src="/dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Toasts/dmxBootstrap5Toasts.js"></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js"></script>
+</head>
+
+<body is="dmx-app" id="indexcuentabancaria">
+    <dmx-serverconnect id="serverconnect2" url="api/hubspot" noload></dmx-serverconnect>
+    <div is="dmx-bs5-toasts" id="toasts1">
+    </div>
+    <dmx-value id="var1"></dmx-value>
+
+    <!-- Using App Connect Expressions in JavaScript Functions -->
+    <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+          runJS: {function: "myFunction", output: true}
+        }</script>
+    <dmx-value id="var2" dmx-bind:value="'JP Rules The Land '"></dmx-value>
+
+    <dmx-serverconnect id="serverconnect1" url="api/query-faq-db" dmx-param:slug="query.slug"></dmx-serverconnect>
+
+    <dmx-smooth-scroll id="scroll1" offset="150"></dmx-smooth-scroll>
+    <div is="dmx-browser" id="browser1"></div>
+
+    <script>
+        console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+    </script>
+
+    <div class="page container-fluid">
+
+        <%- await include('/partials/navbar', Object.assign({}, locals)) %>
+
+            <!-- <div class="main container-flex">
+      <div class="main__center center">
+        <div class="main__wrap container-fluit">
+          <div class="stage container-fluid">RISK-FREE 30 DAY TRIAL</div>
+          <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">The best way</span>
+            <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">to organize </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">your work.</span>
+          </h1>
+          <div class="main__text">Organize your tasks, lists and reminders in one app.</div>
+          <div class="main__btns"><button class="main__btn btn btn_orange">Try it free</button><button class="main__btn btn btn_border"><svg class="icon icon-play">
+                <use xlink:href="img/sprite.svg#icon-play"></use>
+              </svg><span>Watch how it works</span></button></div>
+        </div>
+        <div class="main__bg" data-aos>
+          <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="/solo/img/figures-1.1.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="/solo/img/figures-1.2.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.3@2x.png 2x" src="/solo/img/figures-1.3.png" alt=""></div>
+        </div>
+        <div class="main__partners">
+          <div class="main__info">Thousands of teams worldwide are using Solo</div>
+          <div class="main__list">
+            <div class="main__logo"><img src="/solo/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/waves.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/travelers.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/goldlines.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/velocity.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+            <div class="main container-fluid">
+                <div class="main__center center">
+                    <div class="main__wrap d-flex flex-column flex-lg-column align-items-lg-start align-items-center align-items-md-start">
+                        <h2 class="stage container-fluid">Desde cualquier parte del mundo</h2>
+                        <h1 class="main__title d1" style="font-size: 42px;"><span data-aos="animation-scale-top" data-aos-duration="600">Abra una cuenta bancaria</span>
+                            <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">en los Estados Unidos</span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400"></span>
+                        </h1>
+                        <p class="main__text">Haga negocios y gestiones su flujo de dinero en dólares. Separe sus cuentas personales y comerciales y limite la responsabilidad legal ahora.&nbsp;</p>
+                        <div class="main__btns">
+                            <button class="main__btn btn btn_orange" data-effect="mfp-zoom-in" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                            <button class="main__btn btn btn_border" data-effect="mfp-zoom-in" dmx-on:click="scroll1.goto('#como_funciona')">¿Cómo funciona?</button>
+                        </div>
+                    </div>
+                    <div class="main__bg style12 d-none d-sm-block" data-aos>
+                        <div class="main__preview"><img src="/img/figures-1.1.png" alt=""></div>
+                        <div class="main__preview"><img src="/solo/img/Globe.png" alt=""></div>
+                        <div class="main__preview"><img src="/solo/img/Card%20_.png" alt=""></div>
+                    </div>
+                    <div class="main__partners container-fluid visually-hidden">
+                        <div class="main__info">Thousands of teams worldwide are using Solo</div>
+                        <div class="main__list">
+                            <div class="main__logo"><img src="/img/rotashow.svg" alt=""></div>
+                            <div class="main__logo"><img src="/img/waves.svg" alt=""></div>
+                            <div class="main__logo"><img src="/img/rotashow.svg" alt=""></div>
+                            <div class="main__logo"><img src="/img/travelers.svg" alt=""></div>
+                            <div class="main__logo"><img src="/img/goldlines.svg" alt=""></div>
+                            <div class="main__logo"><img src="/img/velocity.svg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages container-fluid" style="/* padding-top: 120px */">
+                <div class="advantages__center center">
+                    <div class="advantages__list">
+                        <div class="advantages__item ">
+                            <div class="advantages__bg">
+                                <div class="advantages__preview"><img src="/img/Banking.png" alt=""></div>
+                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="advantages__wrap d-flex ">
+                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">¿Por qué abrir una cuenta bancaria en los Estados Unidos?</h2>
+                                    <p class="advantages__text">Gestione su negocio internacionalmente sin restricciones abriendo una cuenta bancaria comercial en los Estados Unidos. Conecte su empresa a plataformas de comercio en línea o haga transferencias de fondos a donde necesite con su cuenta bancaria. Descubra sus grandes beneficios a continuación.</p>
+                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="steps container-fluid" style="margin-bottom: 96px;">
+            <div class="steps__center center container-fluid mb-0" style="/* margin-bottom: 96px */">
+                <p class="stage">Desarrollo de Negocio</p>
+
+
+                <h2 class="steps__title h2" data-aos="animation-scale-top" data-aos-duration="600">Potenciamos sus Principales<br>Necesidades Comerciales</h2>
+                <div class="steps__list mb-0" style="/* margin-bottom: 96px */">
+                    <div class="steps__item container-fluid border-0">
+                        <div class="steps__icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="52" viewBox="0 0 60 52">
+                                <path fill="#272e35" d="M30.001.5C44.082.5 55.5 11.918 55.5 26c0 .836-.044 1.672-.129 2.509l1.569-1.569a1.5 1.5 0 0 1 2.224 2.007l-.103.114-4 4a1.5 1.5 0 0 1-2.007.103l-.114-.103-4-4a1.5 1.5 0 0 1 2.007-2.224l.114.103 1.32 1.318c.079-.754.119-1.506.119-2.257 0-4.467-1.302-8.63-3.548-12.131-2.741.872-5.525 1.555-8.341 2.045l.018.097.136.774.064.392.119.793.108.804a54.32 54.32 0 0 1 .22 2.057h0l.068.84.029.424.05.854c.051 1.001.077 2.019.077 3.051s-.026 2.05-.077 3.051h0l-.05.854-.029.424-.068.84a54.32 54.32 0 0 1-.22 2.057h0l-.108.804-.058.398-.125.787-.136.774-.016.088a63.56 63.56 0 0 1 9.385 2.384l.027.01-.027-.01a1.5 1.5 0 0 1 .944 1.9c-.059.176-.148.334-.259.471l.055-.079C46.05 47.331 38.57 51.359 30.388 51.486A5.13 5.13 0 0 1 30 51.5a5.83 5.83 0 0 1-.39-.013l.38.002c-14.082 0-25.5-11.418-25.5-25.5 0-.828.043-1.656.127-2.485l-1.556 1.556a1.5 1.5 0 0 1-2.007.103l-.114-.103a1.5 1.5 0 0 1-.103-2.007l.103-.114 4-4a1.5 1.5 0 0 1 2.007-.103l.114.103 4 4a1.5 1.5 0 0 1-2.007 2.224l-.114-.103-1.33-1.328a21.61 21.61 0 0 0-.119 2.257c0 4.467 1.302 8.63 3.548 12.131 2.743-.872 5.53-1.556 8.348-2.046l-.015-.085-.136-.774-.064-.392-.119-.793-.108-.804a54.32 54.32 0 0 1-.22-2.057h0l-.068-.84-.029-.424-.05-.854C18.526 28.05 18.5 27.032 18.5 26h0l.002-.441a59.97 59.97 0 0 1 .075-2.61h0l.05-.854.029-.424.068-.84a54.32 54.32 0 0 1 .22-2.057h0l.108-.804.058-.398.125-.787.136-.774.018-.099c-3.158-.548-6.277-1.341-9.341-2.368a1.47 1.47 0 0 1-.445-.216c-.181-.129-.325-.292-.43-.473-.005-.011-.011-.022-.017-.033a.98.98 0 0 1-.044-.086c-.004-.011-.009-.022-.014-.033-.015-.033-.028-.067-.04-.101-.003-.011-.007-.023-.011-.035a1.16 1.16 0 0 1-.025-.082l-.01-.043a1.34 1.34 0 0 1-.016-.076 1.49 1.49 0 0 1-.01-.067l-.006-.055c-.003-.028-.005-.056-.006-.085v-.043c-.001-.076.004-.152.015-.229l.009-.055c.004-.022.009-.045.014-.067l.005-.02a1.49 1.49 0 0 1 .025-.09 1.1 1.1 0 0 1 .009-.029 1.52 1.52 0 0 1 .054-.139 2.17 2.17 0 0 1 .037-.075 1.4 1.4 0 0 1 .12-.195l-.011.018C14.019 4.551 21.666.5 30 .5h.001zm-.007 37.656c-2.335 0-4.656.139-6.959.414l.135.494.187.64a31.53 31.53 0 0 0 .5 1.52h0l.213.575.22.555c1.501 3.663 3.453 5.956 5.457 6.135h.243.26c2.006-.177 3.958-2.471 5.459-6.135h0l.22-.555.213-.575a31.53 31.53 0 0 0 .5-1.52h0l.187-.64.133-.493c-2.306-.275-4.631-.415-6.969-.415zm-9.959.852l-.481.082c-2.226.401-4.432.929-6.612 1.581a22.51 22.51 0 0 0 10.806 6.941c-1.239-1.73-2.297-3.97-3.133-6.585h0l-.208-.675c-.13-.438-.255-.886-.373-1.343zm19.93-.001l-.022.089a38.12 38.12 0 0 1-.35 1.254h0l-.208.675c-.833 2.607-1.888 4.843-3.122 6.571 4.162-1.214 7.887-3.62 10.74-6.937a60.1 60.1 0 0 0-7.038-1.652zM30 16.832a61.75 61.75 0 0 1-7.629-.473l-.004.023-.068.366-.128.742-.06.376-.112.762-.102.775-.132 1.185-.074.805-.062.816-.05.826-.038.836-.026.845L21.5 26l.002.43.013.854.026.845.038.836.05.826.062.816.074.805.132 1.185.102.775.112.762.06.376.128.742.137.728-.068-.352a61.75 61.75 0 0 1 15.263.001l.002-.012.068-.366.128-.742.06-.376.112-.762.102-.775.132-1.185.074-.805.062-.816.05-.826.038-.836.026-.845L38.5 26l-.015-1.284-.026-.845-.038-.836-.05-.826-.062-.816-.074-.805-.132-1.185-.102-.775-.112-.762-.06-.376-.128-.742-.137-.728.066.339a61.75 61.75 0 0 1-7.629.473zM30 3.5c-2.093 0-4.146 2.329-5.71 6.146h0l-.22.555-.213.575a31.53 31.53 0 0 0-.5 1.52h0l-.187.64-.13.482c2.303.275 4.625.414 6.96.414s4.658-.139 6.961-.414l-.131-.482-.187-.64a31.53 31.53 0 0 0-.5-1.52h0l-.213-.575-.22-.555C34.146 5.829 32.093 3.5 30 3.5zm-6.251.886l-.306.092a22.48 22.48 0 0 0-10.454 6.849c2.322.694 4.674 1.246 7.049 1.654.116-.455.24-.899.369-1.333h0l.208-.675c.836-2.616 1.895-4.857 3.134-6.588zm12.496-.008l.087.123c1.204 1.714 2.235 3.914 3.052 6.473h0l.208.675a38.22 38.22 0 0 1 .37 1.331c2.387-.408 4.751-.963 7.085-1.661-2.814-3.266-6.549-5.713-10.802-6.94z"></path>
+                            </svg></div>
+                        <h2 class="options__info">Plan de Negocio</h2>
+                        <p class="steps__text">Desarrolle fácil y rápidamente un plan de negocios que cubra todos los aspectos básicos de la empresa para inicial o desarrolla un proyecto.&nbsp;</p>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="52" viewBox="0 0 60 52">
+                                <path fill="#272e35" d="M30.001.5C44.082.5 55.5 11.918 55.5 26c0 .836-.044 1.672-.129 2.509l1.569-1.569a1.5 1.5 0 0 1 2.224 2.007l-.103.114-4 4a1.5 1.5 0 0 1-2.007.103l-.114-.103-4-4a1.5 1.5 0 0 1 2.007-2.224l.114.103 1.32 1.318c.079-.754.119-1.506.119-2.257 0-4.467-1.302-8.63-3.548-12.131-2.741.872-5.525 1.555-8.341 2.045l.018.097.136.774.064.392.119.793.108.804a54.32 54.32 0 0 1 .22 2.057h0l.068.84.029.424.05.854c.051 1.001.077 2.019.077 3.051s-.026 2.05-.077 3.051h0l-.05.854-.029.424-.068.84a54.32 54.32 0 0 1-.22 2.057h0l-.108.804-.058.398-.125.787-.136.774-.016.088a63.56 63.56 0 0 1 9.385 2.384l.027.01-.027-.01a1.5 1.5 0 0 1 .944 1.9c-.059.176-.148.334-.259.471l.055-.079C46.05 47.331 38.57 51.359 30.388 51.486A5.13 5.13 0 0 1 30 51.5a5.83 5.83 0 0 1-.39-.013l.38.002c-14.082 0-25.5-11.418-25.5-25.5 0-.828.043-1.656.127-2.485l-1.556 1.556a1.5 1.5 0 0 1-2.007.103l-.114-.103a1.5 1.5 0 0 1-.103-2.007l.103-.114 4-4a1.5 1.5 0 0 1 2.007-.103l.114.103 4 4a1.5 1.5 0 0 1-2.007 2.224l-.114-.103-1.33-1.328a21.61 21.61 0 0 0-.119 2.257c0 4.467 1.302 8.63 3.548 12.131 2.743-.872 5.53-1.556 8.348-2.046l-.015-.085-.136-.774-.064-.392-.119-.793-.108-.804a54.32 54.32 0 0 1-.22-2.057h0l-.068-.84-.029-.424-.05-.854C18.526 28.05 18.5 27.032 18.5 26h0l.002-.441a59.97 59.97 0 0 1 .075-2.61h0l.05-.854.029-.424.068-.84a54.32 54.32 0 0 1 .22-2.057h0l.108-.804.058-.398.125-.787.136-.774.018-.099c-3.158-.548-6.277-1.341-9.341-2.368a1.47 1.47 0 0 1-.445-.216c-.181-.129-.325-.292-.43-.473-.005-.011-.011-.022-.017-.033a.98.98 0 0 1-.044-.086c-.004-.011-.009-.022-.014-.033-.015-.033-.028-.067-.04-.101-.003-.011-.007-.023-.011-.035a1.16 1.16 0 0 1-.025-.082l-.01-.043a1.34 1.34 0 0 1-.016-.076 1.49 1.49 0 0 1-.01-.067l-.006-.055c-.003-.028-.005-.056-.006-.085v-.043c-.001-.076.004-.152.015-.229l.009-.055c.004-.022.009-.045.014-.067l.005-.02a1.49 1.49 0 0 1 .025-.09 1.1 1.1 0 0 1 .009-.029 1.52 1.52 0 0 1 .054-.139 2.17 2.17 0 0 1 .037-.075 1.4 1.4 0 0 1 .12-.195l-.011.018C14.019 4.551 21.666.5 30 .5h.001zm-.007 37.656c-2.335 0-4.656.139-6.959.414l.135.494.187.64a31.53 31.53 0 0 0 .5 1.52h0l.213.575.22.555c1.501 3.663 3.453 5.956 5.457 6.135h.243.26c2.006-.177 3.958-2.471 5.459-6.135h0l.22-.555.213-.575a31.53 31.53 0 0 0 .5-1.52h0l.187-.64.133-.493c-2.306-.275-4.631-.415-6.969-.415zm-9.959.852l-.481.082c-2.226.401-4.432.929-6.612 1.581a22.51 22.51 0 0 0 10.806 6.941c-1.239-1.73-2.297-3.97-3.133-6.585h0l-.208-.675c-.13-.438-.255-.886-.373-1.343zm19.93-.001l-.022.089a38.12 38.12 0 0 1-.35 1.254h0l-.208.675c-.833 2.607-1.888 4.843-3.122 6.571 4.162-1.214 7.887-3.62 10.74-6.937a60.1 60.1 0 0 0-7.038-1.652zM30 16.832a61.75 61.75 0 0 1-7.629-.473l-.004.023-.068.366-.128.742-.06.376-.112.762-.102.775-.132 1.185-.074.805-.062.816-.05.826-.038.836-.026.845L21.5 26l.002.43.013.854.026.845.038.836.05.826.062.816.074.805.132 1.185.102.775.112.762.06.376.128.742.137.728-.068-.352a61.75 61.75 0 0 1 15.263.001l.002-.012.068-.366.128-.742.06-.376.112-.762.102-.775.132-1.185.074-.805.062-.816.05-.826.038-.836.026-.845L38.5 26l-.015-1.284-.026-.845-.038-.836-.05-.826-.062-.816-.074-.805-.132-1.185-.102-.775-.112-.762-.06-.376-.128-.742-.137-.728.066.339a61.75 61.75 0 0 1-7.629.473zM30 3.5c-2.093 0-4.146 2.329-5.71 6.146h0l-.22.555-.213.575a31.53 31.53 0 0 0-.5 1.52h0l-.187.64-.13.482c2.303.275 4.625.414 6.96.414s4.658-.139 6.961-.414l-.131-.482-.187-.64a31.53 31.53 0 0 0-.5-1.52h0l-.213-.575-.22-.555C34.146 5.829 32.093 3.5 30 3.5zm-6.251.886l-.306.092a22.48 22.48 0 0 0-10.454 6.849c2.322.694 4.674 1.246 7.049 1.654.116-.455.24-.899.369-1.333h0l.208-.675c.836-2.616 1.895-4.857 3.134-6.588zm12.496-.008l.087.123c1.204 1.714 2.235 3.914 3.052 6.473h0l.208.675a38.22 38.22 0 0 1 .37 1.331c2.387-.408 4.751-.963 7.085-1.661-2.814-3.266-6.549-5.713-10.802-6.94z"></path>
+                            </svg></div>
+                        <h2 class="options__info">Creación de Marca&nbsp;</h2>
+                        <p class="steps__text">Obtenga un nombre libre de conflictos de marca, diseño de logo, dominio web, correo electrónico de negocios y más para mercadear su negocio.&nbsp;</p>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="52" viewBox="0 0 60 52">
+                                <path fill="#272e35" d="M30.001.5C44.082.5 55.5 11.918 55.5 26c0 .836-.044 1.672-.129 2.509l1.569-1.569a1.5 1.5 0 0 1 2.224 2.007l-.103.114-4 4a1.5 1.5 0 0 1-2.007.103l-.114-.103-4-4a1.5 1.5 0 0 1 2.007-2.224l.114.103 1.32 1.318c.079-.754.119-1.506.119-2.257 0-4.467-1.302-8.63-3.548-12.131-2.741.872-5.525 1.555-8.341 2.045l.018.097.136.774.064.392.119.793.108.804a54.32 54.32 0 0 1 .22 2.057h0l.068.84.029.424.05.854c.051 1.001.077 2.019.077 3.051s-.026 2.05-.077 3.051h0l-.05.854-.029.424-.068.84a54.32 54.32 0 0 1-.22 2.057h0l-.108.804-.058.398-.125.787-.136.774-.016.088a63.56 63.56 0 0 1 9.385 2.384l.027.01-.027-.01a1.5 1.5 0 0 1 .944 1.9c-.059.176-.148.334-.259.471l.055-.079C46.05 47.331 38.57 51.359 30.388 51.486A5.13 5.13 0 0 1 30 51.5a5.83 5.83 0 0 1-.39-.013l.38.002c-14.082 0-25.5-11.418-25.5-25.5 0-.828.043-1.656.127-2.485l-1.556 1.556a1.5 1.5 0 0 1-2.007.103l-.114-.103a1.5 1.5 0 0 1-.103-2.007l.103-.114 4-4a1.5 1.5 0 0 1 2.007-.103l.114.103 4 4a1.5 1.5 0 0 1-2.007 2.224l-.114-.103-1.33-1.328a21.61 21.61 0 0 0-.119 2.257c0 4.467 1.302 8.63 3.548 12.131 2.743-.872 5.53-1.556 8.348-2.046l-.015-.085-.136-.774-.064-.392-.119-.793-.108-.804a54.32 54.32 0 0 1-.22-2.057h0l-.068-.84-.029-.424-.05-.854C18.526 28.05 18.5 27.032 18.5 26h0l.002-.441a59.97 59.97 0 0 1 .075-2.61h0l.05-.854.029-.424.068-.84a54.32 54.32 0 0 1 .22-2.057h0l.108-.804.058-.398.125-.787.136-.774.018-.099c-3.158-.548-6.277-1.341-9.341-2.368a1.47 1.47 0 0 1-.445-.216c-.181-.129-.325-.292-.43-.473-.005-.011-.011-.022-.017-.033a.98.98 0 0 1-.044-.086c-.004-.011-.009-.022-.014-.033-.015-.033-.028-.067-.04-.101-.003-.011-.007-.023-.011-.035a1.16 1.16 0 0 1-.025-.082l-.01-.043a1.34 1.34 0 0 1-.016-.076 1.49 1.49 0 0 1-.01-.067l-.006-.055c-.003-.028-.005-.056-.006-.085v-.043c-.001-.076.004-.152.015-.229l.009-.055c.004-.022.009-.045.014-.067l.005-.02a1.49 1.49 0 0 1 .025-.09 1.1 1.1 0 0 1 .009-.029 1.52 1.52 0 0 1 .054-.139 2.17 2.17 0 0 1 .037-.075 1.4 1.4 0 0 1 .12-.195l-.011.018C14.019 4.551 21.666.5 30 .5h.001zm-.007 37.656c-2.335 0-4.656.139-6.959.414l.135.494.187.64a31.53 31.53 0 0 0 .5 1.52h0l.213.575.22.555c1.501 3.663 3.453 5.956 5.457 6.135h.243.26c2.006-.177 3.958-2.471 5.459-6.135h0l.22-.555.213-.575a31.53 31.53 0 0 0 .5-1.52h0l.187-.64.133-.493c-2.306-.275-4.631-.415-6.969-.415zm-9.959.852l-.481.082c-2.226.401-4.432.929-6.612 1.581a22.51 22.51 0 0 0 10.806 6.941c-1.239-1.73-2.297-3.97-3.133-6.585h0l-.208-.675c-.13-.438-.255-.886-.373-1.343zm19.93-.001l-.022.089a38.12 38.12 0 0 1-.35 1.254h0l-.208.675c-.833 2.607-1.888 4.843-3.122 6.571 4.162-1.214 7.887-3.62 10.74-6.937a60.1 60.1 0 0 0-7.038-1.652zM30 16.832a61.75 61.75 0 0 1-7.629-.473l-.004.023-.068.366-.128.742-.06.376-.112.762-.102.775-.132 1.185-.074.805-.062.816-.05.826-.038.836-.026.845L21.5 26l.002.43.013.854.026.845.038.836.05.826.062.816.074.805.132 1.185.102.775.112.762.06.376.128.742.137.728-.068-.352a61.75 61.75 0 0 1 15.263.001l.002-.012.068-.366.128-.742.06-.376.112-.762.102-.775.132-1.185.074-.805.062-.816.05-.826.038-.836.026-.845L38.5 26l-.015-1.284-.026-.845-.038-.836-.05-.826-.062-.816-.074-.805-.132-1.185-.102-.775-.112-.762-.06-.376-.128-.742-.137-.728.066.339a61.75 61.75 0 0 1-7.629.473zM30 3.5c-2.093 0-4.146 2.329-5.71 6.146h0l-.22.555-.213.575a31.53 31.53 0 0 0-.5 1.52h0l-.187.64-.13.482c2.303.275 4.625.414 6.96.414s4.658-.139 6.961-.414l-.131-.482-.187-.64a31.53 31.53 0 0 0-.5-1.52h0l-.213-.575-.22-.555C34.146 5.829 32.093 3.5 30 3.5zm-6.251.886l-.306.092a22.48 22.48 0 0 0-10.454 6.849c2.322.694 4.674 1.246 7.049 1.654.116-.455.24-.899.369-1.333h0l.208-.675c.836-2.616 1.895-4.857 3.134-6.588zm12.496-.008l.087.123c1.204 1.714 2.235 3.914 3.052 6.473h0l.208.675a38.22 38.22 0 0 1 .37 1.331c2.387-.408 4.751-.963 7.085-1.661-2.814-3.266-6.549-5.713-10.802-6.94z"></path>
+                            </svg></div>
+                        <h2 class="options__info">Presencia Web</h2>
+                        <p class="steps__text">Herramientas para establecer una imaginen confiable para su nueva compañía. Página web, e-commerce o plataformas alternativas.</p>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="52" viewBox="0 0 60 52">
+                                <path fill="#272e35" d="M30.001.5C44.082.5 55.5 11.918 55.5 26c0 .836-.044 1.672-.129 2.509l1.569-1.569a1.5 1.5 0 0 1 2.224 2.007l-.103.114-4 4a1.5 1.5 0 0 1-2.007.103l-.114-.103-4-4a1.5 1.5 0 0 1 2.007-2.224l.114.103 1.32 1.318c.079-.754.119-1.506.119-2.257 0-4.467-1.302-8.63-3.548-12.131-2.741.872-5.525 1.555-8.341 2.045l.018.097.136.774.064.392.119.793.108.804a54.32 54.32 0 0 1 .22 2.057h0l.068.84.029.424.05.854c.051 1.001.077 2.019.077 3.051s-.026 2.05-.077 3.051h0l-.05.854-.029.424-.068.84a54.32 54.32 0 0 1-.22 2.057h0l-.108.804-.058.398-.125.787-.136.774-.016.088a63.56 63.56 0 0 1 9.385 2.384l.027.01-.027-.01a1.5 1.5 0 0 1 .944 1.9c-.059.176-.148.334-.259.471l.055-.079C46.05 47.331 38.57 51.359 30.388 51.486A5.13 5.13 0 0 1 30 51.5a5.83 5.83 0 0 1-.39-.013l.38.002c-14.082 0-25.5-11.418-25.5-25.5 0-.828.043-1.656.127-2.485l-1.556 1.556a1.5 1.5 0 0 1-2.007.103l-.114-.103a1.5 1.5 0 0 1-.103-2.007l.103-.114 4-4a1.5 1.5 0 0 1 2.007-.103l.114.103 4 4a1.5 1.5 0 0 1-2.007 2.224l-.114-.103-1.33-1.328a21.61 21.61 0 0 0-.119 2.257c0 4.467 1.302 8.63 3.548 12.131 2.743-.872 5.53-1.556 8.348-2.046l-.015-.085-.136-.774-.064-.392-.119-.793-.108-.804a54.32 54.32 0 0 1-.22-2.057h0l-.068-.84-.029-.424-.05-.854C18.526 28.05 18.5 27.032 18.5 26h0l.002-.441a59.97 59.97 0 0 1 .075-2.61h0l.05-.854.029-.424.068-.84a54.32 54.32 0 0 1 .22-2.057h0l.108-.804.058-.398.125-.787.136-.774.018-.099c-3.158-.548-6.277-1.341-9.341-2.368a1.47 1.47 0 0 1-.445-.216c-.181-.129-.325-.292-.43-.473-.005-.011-.011-.022-.017-.033a.98.98 0 0 1-.044-.086c-.004-.011-.009-.022-.014-.033-.015-.033-.028-.067-.04-.101-.003-.011-.007-.023-.011-.035a1.16 1.16 0 0 1-.025-.082l-.01-.043a1.34 1.34 0 0 1-.016-.076 1.49 1.49 0 0 1-.01-.067l-.006-.055c-.003-.028-.005-.056-.006-.085v-.043c-.001-.076.004-.152.015-.229l.009-.055c.004-.022.009-.045.014-.067l.005-.02a1.49 1.49 0 0 1 .025-.09 1.1 1.1 0 0 1 .009-.029 1.52 1.52 0 0 1 .054-.139 2.17 2.17 0 0 1 .037-.075 1.4 1.4 0 0 1 .12-.195l-.011.018C14.019 4.551 21.666.5 30 .5h.001zm-.007 37.656c-2.335 0-4.656.139-6.959.414l.135.494.187.64a31.53 31.53 0 0 0 .5 1.52h0l.213.575.22.555c1.501 3.663 3.453 5.956 5.457 6.135h.243.26c2.006-.177 3.958-2.471 5.459-6.135h0l.22-.555.213-.575a31.53 31.53 0 0 0 .5-1.52h0l.187-.64.133-.493c-2.306-.275-4.631-.415-6.969-.415zm-9.959.852l-.481.082c-2.226.401-4.432.929-6.612 1.581a22.51 22.51 0 0 0 10.806 6.941c-1.239-1.73-2.297-3.97-3.133-6.585h0l-.208-.675c-.13-.438-.255-.886-.373-1.343zm19.93-.001l-.022.089a38.12 38.12 0 0 1-.35 1.254h0l-.208.675c-.833 2.607-1.888 4.843-3.122 6.571 4.162-1.214 7.887-3.62 10.74-6.937a60.1 60.1 0 0 0-7.038-1.652zM30 16.832a61.75 61.75 0 0 1-7.629-.473l-.004.023-.068.366-.128.742-.06.376-.112.762-.102.775-.132 1.185-.074.805-.062.816-.05.826-.038.836-.026.845L21.5 26l.002.43.013.854.026.845.038.836.05.826.062.816.074.805.132 1.185.102.775.112.762.06.376.128.742.137.728-.068-.352a61.75 61.75 0 0 1 15.263.001l.002-.012.068-.366.128-.742.06-.376.112-.762.102-.775.132-1.185.074-.805.062-.816.05-.826.038-.836.026-.845L38.5 26l-.015-1.284-.026-.845-.038-.836-.05-.826-.062-.816-.074-.805-.132-1.185-.102-.775-.112-.762-.06-.376-.128-.742-.137-.728.066.339a61.75 61.75 0 0 1-7.629.473zM30 3.5c-2.093 0-4.146 2.329-5.71 6.146h0l-.22.555-.213.575a31.53 31.53 0 0 0-.5 1.52h0l-.187.64-.13.482c2.303.275 4.625.414 6.96.414s4.658-.139 6.961-.414l-.131-.482-.187-.64a31.53 31.53 0 0 0-.5-1.52h0l-.213-.575-.22-.555C34.146 5.829 32.093 3.5 30 3.5zm-6.251.886l-.306.092a22.48 22.48 0 0 0-10.454 6.849c2.322.694 4.674 1.246 7.049 1.654.116-.455.24-.899.369-1.333h0l.208-.675c.836-2.616 1.895-4.857 3.134-6.588zm12.496-.008l.087.123c1.204 1.714 2.235 3.914 3.052 6.473h0l.208.675a38.22 38.22 0 0 1 .37 1.331c2.387-.408 4.751-.963 7.085-1.661-2.814-3.266-6.549-5.713-10.802-6.94z"></path>
+                            </svg></div>
+                        <h2 class="options__info">Marketplaces y Pagos</h2>
+                        <p class="steps__text">Le apoyamos en la creación de sus cuenta y perfiles en las principales plataformas de pago y marketplaces en línea como Amazon, Stripe y Paypal.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+            <div class="options">
+                <div class="options__center center">
+                    <div class="options__wrap">
+                        <div class="options__list row">
+                            <div class="options__item five__columns" style="/* width: 200px */">
+                                <i class="bi bi-laptop options__icon style36"></i>
+                                <p class="options__text">Completamente en línea.&nbsp;<span style="color: var(--body-text); font-family: var(--body-font); font-size: var(--text-body);">Sin necesidad de viajar a Estados Unidos</span></p>
+                            </div>
+                            <div class="options__item five__columns">
+                                <i class="bi bi-person-badge options__icon style36"></i>
+                                <p class="options__text">Sin necesidad de número de seguro social (SSN)</p>
+                            </div>
+                            <div class="options__item five__columns">
+                                <i class="bi bi-telephone options__icon style36"></i>
+                                <p class="options__text">Sin necesidad de dirección o teléfono en los Estados Unidos
+                                </p>
+                            </div>
+                            <div class="options__item five__columns">
+                                <i class="bi bi-coin options__icon style36"></i>
+                                <p class="options__text">Opciones sin exigencia de saldo mínimo ni costos de mantenimiento</p>
+                            </div>
+                            <div class="options__item five__columns container-fluid">
+                                <i class="bi bi-shield-check options__icon style36"></i>
+                                <p class="options__text">Saldo de cuentas corrientes y ahorro protegidos por la FDIC&nbsp;</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <%- await include('/partials/promo-banner', Object.assign({}, locals, {Heading:'Descubra los Servicios de Desarrollo de Negocio',Button_CTA:'Conozca más'})) %>
+                <div class="options">
+                    <div class="options__center center">
+                        <div class="advantages__head">
+                            <div class="advantages__photo"></div>
+                            <p class="stage">De idea a ejecución</p>
+                            <h2 class="advantages__title h2" data-aos="animation-scale-top" data-aos-duration="600">Forme parte del mercado Estadounidense</h2>
+                        </div>
+                        <div class="options__wrap">
+                            <div class="options__list d-flex justify-content-start justify-content-lg-center">
+                                <div class="options__item three__columns d-flex flex-column style38">
+
+                                    <i class="bi bi-globe options__icon style36"></i>
+                                    <h2 class="options__info max__width__full ">Reciba pagos de clientes y sitios web en USD sin comisiones</h2>
+                                    <p class="options__text max__width__full">Tenga acceso directo a millones de consumidores en USA y exposición internacional a nuevos mercados.&nbsp;</p>
+                                </div>
+                                <div class="options__item three__columns d-flex flex-column">
+                                    <i class="bi bi-cash-coin options__icon style36"></i>
+                                    <h2 class="options__info max__width__full">Pague a proveedores y empleados de cualquier país&nbsp;</h2>
+                                    <p class="options__text max__width__full">Tenga presencia en cualquiera de los 50 estados del país y aproveche el potencial de contruir una empresa local.</p>
+                                </div>
+                                <div class="options__item three__columns d-flex flex-column">
+                                    <i class="bi bi-file-earmark-spreadsheet options__icon style36"></i>
+                                    <h2 class="options__info max__width__full mt-0">Simplifique y automatice la&nbsp; contabilidad de su negocio&nbsp;</h2>
+                                    <p class="options__text max__width__full" style="max-width: 100%;">Una cuenta bancaria empresarial le permite importar las transacciones en sistemas contables como Quickbooks.</p>
+                                </div>
+                                <div class="options__item three__columns d-flex flex-column flex-xxl-column">
+                                    <i class="bi bi-graph-up-arrow options__icon style36"></i>
+                                    <h2 class="options__info max__width__full mt-xxl-4 ">Posicione su negocio para el crecimiento</h2>
+                                    <p class="options__text max__width__full" style="max-width: 100%;">Disminuya las dificultades de manejar todos los aspectos del negocio. Delegue las tareas relacionadas con el banco como los pagos a empleados o consultores con una cuenta empresarial.</p>
+                                </div>
+                                <div class="options__item three__columns d-flex flex-column flex-xxl-column">
+                                    <i class="bi bi-credit-card-2-front options__icon style36"></i>
+                                    <h2 class="options__info max__width__full mt-xxl-4 ">Compre sin restricciones con Tarjeta de Débito Internacional</h2>
+                                    <p class="options__text max__width__full" style="max-width: 100%;">Levante capital para su emprendimiento o defina formalmente los derechos y deberes de cada parte escogiendo la estructura que más se adapte a su proyecto: LLC o C-Corp.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions" id="como_funciona">
+                    <div class="center container-fluid text-start">
+                        <div class="d-flex flex-column align-items-center">
+                            <p class="stage">¿Como funciona?</p>
+                            <h2 class="steps__title h2 centered text-center" data-aos="animation-scale-top" data-aos-duration="600">Abra su cuenta bancaria en USA fácil y rápidamente</h2>
+                        </div>
+                        <ul class="nav nav-tabs questions__nav flex-row" id="navTabs1_tabs" role="tablist" style="border-bottom: 0px;">
+                            <li class="nav-item questions__link" style="/* margin-right: 0px */">
+                                <a class="questions__link active pt-2 pb-2" id="navTabs1_1_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true">Formulario</a>
+                            </li>
+                            <li class="nav-item questions__link">
+                                <a class="questions__link pt-2 pb-2" id="navTabs1_2_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Documentos</a>
+                            </li>
+                            <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2 active_solo" id="navTabs1_3_tab1" data-bs-toggle="tab" data-bs-target="#navTabs1_4" role="tab" aria-controls="navTabs1_3" aria-selected="false" style="a:not(.btn):focus{color: #fd7e14}; ">Apertura cuenta</a></li>
+                            <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab3" data-bs-toggle="tab" data-bs-target="#navTabs1_6" role="tab" aria-controls="navTabs1_3" aria-selected="false">Servicios</a></li>
+                        </ul>
+                        <div class="tab-content" id="navTabs1_content">
+                            <div class="tab-pane fade show active" id="navTabs1_1" role="tabpanel">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview"><img src="/img/Group%20766.png" alt="" class="img-process"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex ">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Formulario de aplicación en línea</h2>
+                                            <p class="advantages__text">En menos pocos minutos, complete el formulario en nuestro sitio web con la información necesaria, indicando el tipo de cuenta que desea abrir y enviando una imagen de su documento de identificación vigente. Así se comienza el proceso de apertura de la cuenta.
+                                            <p wappler-command="editContent" class="advantages__text">¿Soy elegible?&nbsp;</p>
+                                            </p>
+                                            <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="navTabs1_2" role="tabpanel">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview centered"><img src="/img/Group%20765.png" alt="" class="img-process"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex ">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Gestión de información y documentos con el banco en Estados Unidos</h2>
+                                            <p class="advantages__text">Nos hacemos cargo el proceso de entrega y tramitación de documentos e información con la entidad bancaria necesarios para la apertura de la cuenta.&nbsp;</p>
+                                            <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="navTabs1_4" role="tabpanel">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview centered"><img src="/img/Group%20764.png" alt="" class="img-process"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex ">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de Cuenta Bancaria en los Estados Unidos</h2>
+                                            <p class="advantages__text">Le apoyamos en el proceso de apertura de la cuenta bancaria para que pueda comenzar a hacer negocios en dólares a través de su empresa.&nbsp;
+                                            <p wappler-command="editContent" class="advantages__text style76"><a class="style77" href="/planes/?#navTabs1_2_tab">¿Qué servicios bancarios utilizamos?</a></p>
+                                            </p>
+                                            <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="navTabs1_5" role="tabpanel">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview"><img srcset="img/advantages-pic-1@2x.png 2x" src="/img/advantages-pic-1.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex flex-column align-items-start">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de cuenta bancaria</h2>
+                                            <p class="advantages__text">Tan pronto como recibamos la confirmación del registro ante el estado, enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos de un día. Si ninguno de los miembros posee SSN, debido a las interrupciones de COVID-19, el IRS puede demorar hasta 50 días en procesar su documento.</p>
+                                            <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="navTabs1_6" role="tabpanel">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview centered"><img src="/img/Group%20768.png" alt="" class="img-process"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Servicios Continuos y de desarrollo de negocio</h2>
+                                            <p class="advantages__text">Le ofrecemos servicios continuos para mantener a su empresa en cumplimiento con todos los requerimientos del estado y servicios para el desarrollo de su negocio. Para que se pueda enfocar en la gestión de su empresa.&nbsp;</p>
+                                            <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="questions">
+                <div class="questions__center center">
+                    <h2 class="questions__title h2" data-aos="animation-scale-top" data-aos-duration="600" style="max-width: 100%;">Pregunta frecuentes</h2>
+                    <div class="questions__list">
+                        <div class="questions__item">
+                            <p class="questions__head">How does it work?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                        <div class="questions__item">
+                            <p class="questions__head">Which platform do you support?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                        <div class="questions__item">
+                            <p class="questions__head">How do I invite my teammates?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                        <div class="questions__item">
+                            <p class="questions__head">Do you have annual plan?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                        <div class="questions__item">
+                            <p class="questions__head">How to I create a new workspace?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                        <div class="questions__item">
+                            <p class="questions__head">How do I set roles & permissions?</p>
+                            <p class="questions__body">4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                <%- await include('/partials/reviews', Object.assign({}, locals)) %>
+                    <div class="questions ">
+                        <div class="questions__center center">
+                            <%- await include('/partials/preguntas-frecuentes', Object.assign({}, locals)) %>
+                        </div>
+                    </div>
+                    <div class="invite container-fluid">
+                        <div class="invite__center center">
+                            <div class="invite__container d-flex">
+                                <div class="invite__bg"></div>
+                                <div class="invite__wrap">
+                                    <h2 class="invite__title d1" data-aos="animation-scale-top" data-aos-duration="600">Abra su cuenta ahora</h2>
+                                    <p class="invite__text">No espere más para tener su cuenta bancaria en los Estados Unidos. Comience su proceso en línea o contáctenos para abrir su cuenta.&nbsp;</p>
+                                    <button class="invite__btn btn btn_orange" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                </div>
+                                <div class="invite__gallery">
+                                    <div class="invite__preview"><img srcset="img/figures-7.1@2x.png 2x" src="/img/figures-7.1.png" alt=""></div>
+                                    <div class="invite__preview" data-aos="animation-translate-down" data-aos-duration="1000"><img srcset="img/figures-7.2@2x.png 2x" src="/img/figures-7.2.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%- await include('/partials/contact-modal', Object.assign({}, locals)) %>
+
+                        <div class="popup mfp-hide" id="popup-sign-in">
+                            <div class="popup__title h2">Sign in</div>
+                            <div class="popup__variants"><a class="popup__variant" href="#"><img src="/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/img/apple.svg" alt="">Sign up via Apple</a></div>
+                            <div class="popup__details">Or continue with email & password</div>
+                            <div class="popup__btns">
+                                <a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a>
+                                <a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Password</a>
+                                <a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Sign In</a>
+                            </div>
+                            <div class="popup__note">
+                            </div>
+                        </div>
+                        <!-- 
+                    <div class="popup mfp-hide" id="popup-code">
+                        <div class="popup__title h2">Check your <br>inbox</div>
+                        <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:tam@ui8.net">tam@ui8.net</a> please check your inbox and enter the code below.</div>
+                        <div class="popup__code">
+                            <div class="popup__number"><input type="tel"></div>
+                            <div class="popup__number"><input type="tel"></div>
+                            <div class="popup__number"><input type="tel"></div>
+                            <div class="popup__number"><input type="tel"></div>
+                            <div class="popup__number"><input type="tel"></div>
+                            <div class="popup__number"><input type="tel"></div>
+                        </div>
+                        <div class="popup__btns"><button class="popup__btn btn btn_orange">Enter</button><a class="popup__link" href="#">Resend digit code</a>
+                        </div>
+                    </div> -->
+
+                        <%- await include('/partials/footer', Object.assign({}, locals)) %>
+    </div><!-- scripts-->
+
+    <script src="/js/svg4everybody.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/app-solo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Using App Connect Expressions in JavaScript Functions -->
+    <script>
+        function myFunction() {
+                        var myVar = dmx.parse("var2.value");
+                        console.log(myVar);
+                    }
+    </script>
+</body>
+
+</html>

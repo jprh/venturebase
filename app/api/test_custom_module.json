@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "JP",
+        "module": "kiosk_ping",
+        "action": "ping_kiosks",
+        "options": {
+          "ip_list": "sheep",
+          "list": "Juan",
+          "lastname": "Ravelo",
+          "data": "https://news.ycombinator.com/news"
+        },
+        "meta": [
+          {
+            "name": "test",
+            "type": "text"
+          }
+        ],
+        "output": true
+      },
+      {
+        "name": "JR",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{JP.test}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true
+      }
+    ]
+  }
+}

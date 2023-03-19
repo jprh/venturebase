@@ -1,0 +1,203 @@
+{
+  "routes": [
+    {
+      "path": "/politicas-y-terminos",
+      "url": ""
+    },
+    {
+      "path": "/exito-pago",
+      "url": "",
+      "name": "stripe-sucess",
+      "routeType": "page",
+      "page": "exito-pago"
+    },
+    {
+      "path": "/fallo-pago",
+      "url": "",
+      "name": "Fallo-ago-stripe",
+      "routeType": "page",
+      "page": "fallo-pago"
+    },
+    {
+      "path": "/blog",
+      "url": "",
+      "routeType": "page",
+      "page": "blog"
+    },
+    {
+      "path": "/blog/:article",
+      "url": "",
+      "routeType": "page",
+      "page": "blog-article"
+    },
+    {
+      "path": "/faq",
+      "url": "",
+      "routeType": "page",
+      "page": "FAQ"
+    },
+    {
+      "path": "/planes",
+      "url": "",
+      "name": "planes",
+      "routeType": "page",
+      "page": "planes-stripe"
+    },
+    {
+      "path": "/paquetes",
+      "url": "",
+      "name": "Planes-stripe",
+      "routeType": "page",
+      "page": "planes-stripe"
+    },
+    {
+      "path": "/test",
+      "url": "",
+      "name": "test",
+      "routeType": "page",
+      "page": "test-views"
+    },
+    {
+      "path": "/test2",
+      "page": "test_try"
+    },
+    {
+      "path": "/agenda",
+      "url": "",
+      "routeType": "page",
+      "page": "agenda-reunion"
+    },
+    {
+      "path": "/pricing-test",
+      "url": "",
+      "routeType": "page",
+      "page": "/public/muse-dashboard/html/pricing.html"
+    },
+    {
+      "path": "/old-home",
+      "url": "",
+      "routeType": "page",
+      "page": "/public/solo/registro-empresa.html"
+    },
+    {
+      "path": "/solicitud-servicio",
+      "url": "",
+      "name": "solicitud-servicio",
+      "routeType": "page",
+      "page": "solicitud-servicio"
+    },
+    {
+      "path": "/",
+      "url": "",
+      "name": "home",
+      "routeType": "page",
+      "page": "home"
+    },
+    {
+      "path": "/cuenta-bancaria/:slug?",
+      "url": "",
+      "routeType": "page",
+      "name": "cuenta-bancaria",
+      "page": "cuenta-bancaria"
+    },
+    {
+      "path": "/cuenta-bancaria-personal/:slug?",
+      "url": "",
+      "name": "cuenta-bancaria",
+      "routeType": "page",
+      "page": "cuenta-bancaria-persona"
+    },
+    {
+      "path": "/registro-empresa",
+      "url": "",
+      "routeType": "page",
+      "page": "registro-empresa",
+      "name": "registro-empresa"
+    },
+    {
+      "path": "/nosotros",
+      "url": "",
+      "routeType": "page",
+      "page": "nosotros",
+      "name": "nosotros"
+    },
+    {
+      "path": "/ein",
+      "url": "",
+      "routeType": "page",
+      "page": "ein",
+      "name": "ein"
+    },
+    {
+      "path": "/agendar-reunion",
+      "page": "agenda-reunion",
+      "name": "Agendar reunion"
+    }
+  ],
+  "partials": {
+    "container-center": {
+      "meta": [
+        {
+          "type": "text",
+          "name": "title"
+        },
+        {
+          "type": "text",
+          "name": "parragraph"
+        }
+      ]
+    },
+    "preguntas-frecuentes": {
+      "meta": [
+        {
+          "type": "array",
+          "name": "data"
+        },
+        {
+          "type": "object",
+          "name": "headers"
+        },
+        {
+          "type": "text",
+          "name": "question-type"
+        }
+      ]
+    },
+    "promo-banner": {
+      "meta": [
+        {
+          "type": "text",
+          "name": "Heading"
+        },
+        {
+          "type": "text",
+          "name": "Button_CTA"
+        },
+        {
+          "type": "text",
+          "name": "URL"
+        }
+      ]
+    },
+    "navbar": {
+      "meta": [
+        {
+          "type": "text",
+          "name": "cta"
+        }
+      ]
+    },
+    "promobanerpartial": {
+      "meta": [
+        {
+          "type": "text",
+          "name": "Header"
+        },
+        {
+          "type": "text",
+          "name": "Button_CTA"
+        }
+      ]
+    }
+  }
+}

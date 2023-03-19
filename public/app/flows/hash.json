@@ -1,0 +1,8 @@
+[
+  {
+    wait: {delay: 400}
+  },
+  {
+    runJS: {function: "hash"}
+  }
+]

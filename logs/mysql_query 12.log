@@ -1,0 +1,29 @@
+/usr/sbin/mysqld, Version: 8.0.31 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-01-27T06:55:57.159457Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2023-01-27T06:56:35.912560Z	    8 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-27T06:56:35.913804Z	    9 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-27T06:56:35.921673Z	    8 Query	select * from `faqs` where `faqs`.`tag` = NULL
+2023-01-27T06:56:35.924340Z	    9 Query	select * from `blog_posts`
+2023-01-27T06:56:43.536780Z	    9 Query	select * from `faqs` where `faqs`.`tag` = NULL
+2023-01-27T06:56:43.548633Z	    8 Query	select * from `blog_posts`
+2023-01-27T06:56:48.299448Z	    8 Query	select * from `faqs` where `faqs`.`tag` = '/planes'
+2023-01-27T06:56:53.981354Z	    8 Query	select * from `faqs`
+2023-01-27T06:57:06.118134Z	    8 Query	select * from `faqs` where `faqs`.`tag` = '/registro-empresa'
+2023-01-27T06:57:06.162219Z	    8 Query	select * from `faqs` where `faqs`.`tag` = '/registro-empresa'
+2023-01-27T06:57:15.663165Z	    8 Query	select * from `faqs` where `faqs`.`tag` = '/planes'
+2023-01-27T06:57:16.857712Z	    8 Query	select * from `faqs` where `faqs`.`tag` = NULL
+2023-01-27T06:57:25.241272Z	    8 Query	select * from `faqs` where `faqs`.`tag` = '/planes'
+2023-01-27T06:57:32.093180Z	    8 Query	select * from `blog_posts`
+2023-01-27T06:57:32.111609Z	    9 Query	select * from `faqs` where `faqs`.`tag` = NULL
+2023-01-27T06:57:37.191233Z	    9 Query	select * from `blog_posts`
+2023-01-27T06:57:37.207783Z	    8 Query	select * from `faqs` where `faqs`.`tag` = NULL

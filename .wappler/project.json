@@ -1,0 +1,110 @@
+{
+  "projectName": "apertura",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap4",
+  "frameworks": [
+    {
+      "name": "jquery_slim_33",
+      "type": "cdn"
+    },
+    {
+      "name": "fontawesome_4",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap4",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "docker",
+  "projectServerModel": "node",
+  "runtime": "capacitor",
+  "webRootFolder": "/public",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "node",
+  "projectLinksType": "site",
+  "targets": [
+    {
+      "name": "Development",
+      "remoteURL": "http://localhost:88",
+      "webServerPort": 88,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "12",
+      "NodeOS": "bullseye",
+      "NodeImageType": "slim",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "dockerTimezone": "Etc/UTC",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m",
+      "databaseType": "mysql",
+      "databasePort": 9906,
+      "mySQLVersion": "8.0.x",
+      "mySQL_rootPassword": "3ICok1za",
+      "mySQL_databaseName": "apertura",
+      "mySQL_username": "db_user",
+      "mySQL_password": "nk9Nx9pT",
+      "logFolder": "/logs",
+      "SQLlog": true
+    },
+    {
+      "name": "productionweb",
+      "remoteURL": "http://104.248.62.167",
+      "webServerPort": 80,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "12",
+      "NodeOS": "bullseye",
+      "NodeImageType": "slim",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "dockerTimezone": "Etc/UTC",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m",
+      "databaseType": "mysql",
+      "databasePort": 9906,
+      "mySQLVersion": "8.0.x",
+      "mySQL_rootPassword": "3ICok1za",
+      "mySQL_databaseName": "apertura",
+      "mySQL_username": "db_user",
+      "mySQL_password": "nk9Nx9pT",
+      "logFolder": "/logs",
+      "SQLlog": true,
+      "dockerHost": "104.248.62.167",
+      "dockerPort": 2376,
+      "dockerUseTLS": true,
+      "dockerCertFolder": "~/.docker/machine/machines/Apertura",
+      "usage": "production",
+      "dockerType": "remote",
+      "dockerMachineName": "Apertura",
+      "dockerProjectName": "apertura__productionweb"
+    }
+  ],
+  "activeTarget": "Development",
+  "projectType": "web",
+  "resources": {
+    "providers": {
+      "digitalocean": {
+        "provider-api-key": "c6561b0b01f9a4146459757d80fd88dd8143f8548ffa7282cc3eaec5dcf183de",
+        "ssh-key-id": 35842824,
+        "ssh-key-file": "~/.ssh/id_rsa.pub",
+        "ssh_key": {
+          "juanpabloravelo": {
+            "id": 35842824,
+            "ssh-key-file": "~/.ssh/id_rsa.pub",
+            "fingerprint": "1d:a8:94:14:3f:86:a0:c1:4f:82:ce:fa:e1:31:76:4f"
+          }
+        }
+      }
+    }
+  }
+}

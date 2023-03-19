@@ -1,0 +1,170 @@
+{
+  "name": "api",
+  "module": "api",
+  "action": "send",
+  "options": {
+    "url": "https://api.stripe.com/v1/products",
+    "headers": {
+      "authorization": "Bearer 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"
+    },
+    "schema": []
+  },
+  "output": true,
+  "meta": [
+    {
+      "type": "object",
+      "name": "data",
+      "sub": [
+        {
+          "type": "text",
+          "name": "object"
+        },
+        {
+          "type": "array",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "id"
+            },
+            {
+              "type": "text",
+              "name": "object"
+            },
+            {
+              "type": "boolean",
+              "name": "active"
+            },
+            {
+              "type": "array",
+              "name": "attributes"
+            },
+            {
+              "type": "number",
+              "name": "created"
+            },
+            {
+              "type": "text",
+              "name": "description"
+            },
+            {
+              "type": "array",
+              "name": "images"
+            },
+            {
+              "type": "boolean",
+              "name": "livemode"
+            },
+            {
+              "type": "object",
+              "name": "metadata"
+            },
+            {
+              "type": "text",
+              "name": "name"
+            },
+            {
+              "type": "text",
+              "name": "package_dimensions"
+            },
+            {
+              "type": "text",
+              "name": "shippable"
+            },
+            {
+              "type": "text",
+              "name": "statement_descriptor"
+            },
+            {
+              "type": "text",
+              "name": "tax_code"
+            },
+            {
+              "type": "text",
+              "name": "type"
+            },
+            {
+              "type": "text",
+              "name": "unit_label"
+            },
+            {
+              "type": "number",
+              "name": "updated"
+            },
+            {
+              "type": "text",
+              "name": "url"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "name": "has_more"
+        },
+        {
+          "type": "text",
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "name": "headers",
+      "sub": [
+        {
+          "type": "text",
+          "name": "access-control-allow-credentials"
+        },
+        {
+          "type": "text",
+          "name": "access-control-allow-methods"
+        },
+        {
+          "type": "text",
+          "name": "access-control-allow-origin"
+        },
+        {
+          "type": "text",
+          "name": "access-control-expose-headers"
+        },
+        {
+          "type": "text",
+          "name": "access-control-max-age"
+        },
+        {
+          "type": "text",
+          "name": "cache-control"
+        },
+        {
+          "type": "text",
+          "name": "content-length"
+        },
+        {
+          "type": "text",
+          "name": "content-type"
+        },
+        {
+          "type": "text",
+          "name": "date"
+        },
+        {
+          "type": "text",
+          "name": "request-id"
+        },
+        {
+          "type": "text",
+          "name": "server"
+        },
+        {
+          "type": "text",
+          "name": "strict-transport-security"
+        },
+        {
+          "type": "text",
+          "name": "stripe-version"
+        }
+      ]
+    }
+  ],
+  "outputType": "object"
+}

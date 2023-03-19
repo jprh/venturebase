@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/partials/contact-modal.ejs",
+      "linkedForm": "serverconnectform1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "name"
+      },
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:email": {}
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "objetivo",
+        "name": "objetivo"
+      },
+      {
+        "type": "text",
+        "fieldName": "requerimiento",
+        "options": {
+          "rules": {
+            "core:maxlength": {
+              "param": "400",
+              "message": "Por favor ingrese un máximo de 400 caracteres."
+            }
+          }
+        },
+        "name": "requerimiento"
+      },
+      {
+        "type": "text",
+        "fieldName": "datetime",
+        "name": "datetime"
+      },
+      {
+        "type": "text",
+        "fieldName": "pathname",
+        "name": "pathname"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "contant_form_submission",
+                "column": "name",
+                "type": "text",
+                "value": "{{$_POST.name}}"
+              },
+              {
+                "table": "contant_form_submission",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "table": "contant_form_submission",
+                "column": "objetivo",
+                "type": "text",
+                "value": "{{$_POST.objetivo}}"
+              },
+              {
+                "table": "contant_form_submission",
+                "column": "requerimiento",
+                "type": "text",
+                "value": "{{$_POST.requerimiento}}"
+              },
+              {
+                "table": "contant_form_submission",
+                "column": "datetime",
+                "type": "datetime",
+                "value": "{{$_POST.datetime}}"
+              },
+              {
+                "table": "contant_form_submission",
+                "column": "pathname",
+                "type": "text",
+                "value": "{{$_POST.pathname}}"
+              }
+            ],
+            "table": "contant_form_submission",
+            "returning": "id",
+            "query": "INSERT INTO contant_form_submission\n(name, email, objetivo, requerimiento, datetime, pathname) VALUES (:P1 /* {{$_POST.name}} */, :P2 /* {{$_POST.email}} */, :P3 /* {{$_POST.objetivo}} */, :P4 /* {{$_POST.requerimiento}} */, :P5 /* {{$_POST.datetime}} */, :P6 /* {{$_POST.pathname}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.name}}"
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.objetivo}}"
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.requerimiento}}"
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{$_POST.datetime}}"
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{$_POST.pathname}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "output": true
+      },
+      {
+        "name": "apihubspots",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "method": "POST",
+          "dataType": "json",
+          "url": "https://api.hubapi.com/crm/v3/objects/contacts?hapikey=868ca143-ad5b-400d-9d92-8501856f8a80",
+          "data": {
+            "properties": {
+              "company": "",
+              "email": "{{$_POST.email}}",
+              "firstname": "{{$_POST.name}}",
+              "lastname": "{{$_POST.name}}",
+              "phone": "",
+              "website": "from venturebase.us"
+            }
+          },
+          "headers": {
+            "content-type": "application/json"
+          }
+        },
+        "output": true
+      }
+    ]
+  }
+}

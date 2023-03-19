@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Toasts/dmxBootstrap5Toasts.js" defer=""></script>
+
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+
+    <script src="/dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+
+    <script src="/dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+
+    <script src="/dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer=""></script>
+
+
+
+    <script src="/dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+    <meta name="ac:route" content="/">
+    <title>Venturebase</title>
+    <meta name="description" content="Ayudamos a comenzar empresas  tramitar el EIN y abrir cuentas bancarias en los Estados Unidos tramitar el EIN y abrir cuentas bancarias en los Estados Unidos  ">
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-logo-vb.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-36x36-vb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-12x12-vb.png">
+    <!-- <link rel="manifest" href="https://solo/img/site.webmanifest"> -->
+    <link rel="mask-icon" href="/img/safari-pin-tab-vb.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:card" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:site" content="@venturebase">
+    <meta name="twitter:title" content="Venturebase">
+    <meta name="twitter:description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:creator" content="@venturebase">
+    <meta name="twitter:image" content="https:/img/Logo.png">
+    <meta property="og:title" content="Venturebase">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="http://venturebase.us">
+    <meta property="og:image" content="https:/img/Logo.png">
+    <meta property="og:description" content="Le ayudamos a comenzar su empresa, obtener su EIN y abrir su cuenta bancaria
+&nbsp;en USA">
+    <meta property="og:site_name" content="Venturebase">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+
+
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" integrity="sha384-NUDU7Qr8dfscXBIhA0px/bRl3cgNrOT9l/WPm15DzH5xnBs4fL4vgRiXURs98/ID" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/muse-dashboard/assets/css/theme.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" media="all" href="/css/app-solo.css">
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+        if (viewportmeta) {
+        if (screen.width < 375) {
+            var newScale = screen.width / 375;
+            viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+        } else {
+            viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+        }
+        }
+    </script>
+
+    <!-- segment script -->
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="JwDbsw1t3TAigxVxodiFcqEr53cwtO8b";;analytics.SNIPPET_VERSION="4.15.3";
+      analytics.load("JwDbsw1t3TAigxVxodiFcqEr53cwtO8b");
+      analytics.page();
+      }}();
+    </script>
+
+    <!-- Personyze script -->
+    <script>
+        window._S_T ||
+    (function(d){
+        var s = d.createElement('script'),
+            u = s.onload===undefined && s.onreadystatechange===undefined,
+            i = 0,
+            f = function() {window._S_T ? (_S_T.async=true) && _S_T.setup(6354, "venturebase.us *.venturebase.us") : i++<120 && setTimeout(f, 600)},
+            h = d.getElementsByTagName('head');
+        s.async = true;
+        s.src = '\/\/counter.personyze.com\/stat-track-lib.js';
+        s.onload = s.onreadystatechange = f;
+        (h && h[0] || d.documentElement).appendChild(s);
+        if (u) f();
+    })(document);
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGWHE7XRS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-ZLGWHE7XRS'{
+        'linker': {
+            'domains': [
+                'venturebase.spp.io',
+                'clients.venturebase.us'
+            ]
+        }
+      });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216721706-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-216721706-1');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1165391834270376');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1165391834270376&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Hotjar Tracking Code for http://venturebase.us/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2776939,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20041373.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- Whatsapp widget Code for http://venturebase.us/ -->
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-c4cc9b6b-31ef-45ef-9a1c-ae68c6e15806"></div>
+
+    <script src="/js/bundle.js"></script>
+
+
+</head>
+
+<body is="dmx-app" id="indexhome">
+    <div is="dmx-bs5-toasts" id="toasts1"></div>
+
+    <dmx-value id="spotlightnationality" dmx-bind:value="'Venezuela'"></dmx-value>
+
+    <div is="dmx-browser" id="browser1"></div>
+    <!-- Using App Connect Expressions in JavaScript Functions -->
+    <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+        runJS: {function: "myFunction", output: true}
+    }</script>
+    <dmx-value id="var2" dmx-bind:value="'JP Rules The Land '"></dmx-value>
+
+    <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script is="dmx-flow" id="flow2" type="text/dmx-flow" autorun="">{
+        runJS: {function: "myFunction2", output: true}
+    }</script>
+
+    <dmx-smooth-scroll id="scroll1" offset="150"></dmx-smooth-scroll>
+
+    <script>
+        console.log(localStorage.getItem('darkMode'));
+            if (localStorage.getItem('darkMode') === "on"){
+                document.body.classList.add("dark");
+                document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+    </script>
+    <script src="/js/the-element.ejs"> </script>
+    <div class="page container-fluid">
+
+
+
+
+        <%- await include('/partials/navbar', Object.assign({}, locals)) %>
+            <%- await include('/partials/contact-modal', Object.assign({}, locals)) %>
+
+                <!-- <div class="main container-flex">
+      <div class="main__center center">
+        <div class="main__wrap container-fluit">
+          <div class="stage container-fluid">RISK-FREE 30 DAY TRIAL</div>
+          <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">The best way</span>
+            <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">to organize </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">your work.</span>
+          </h1>
+          <div class="main__text">Organize your tasks, lists and reminders in one app.</div>
+          <div class="main__btns"><button class="main__btn btn btn_orange">Try it free</button><button class="main__btn btn btn_border"><svg class="icon icon-play">
+                <use xlink:href="img/sprite.svg#icon-play"></use>
+              </svg><span>Watch how it works</span></button></div>
+        </div>
+        <div class="main__bg" data-aos>
+          <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="/solo/img/figures-1.1.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="/solo/img/figures-1.2.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.3@2x.png 2x" src="/solo/img/figures-1.3.png" alt=""></div>
+        </div>
+        <div class="main__partners">
+          <div class="main__info">Thousands of teams worldwide are using Solo</div>
+          <div class="main__list">
+            <div class="main__logo"><img src="/solo/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/waves.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/travelers.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/goldlines.svg" alt=""></div>
+            <div class="main__logo"><img src="/solo/img/velocity.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+                <div class="main container-fluid">
+                    <div class="main__center center">
+                        <div class="main__wrap d-flex flex-column align-items-center flex-lg-column align-items-lg-start align-items-md-start style34">
+                            <h2 class="stage container-fluid">DESDE CUALQUIER PARTE DEL MUNDO</h2>
+                            <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">Comience su</span>
+                                <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">empresa en USA</span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400"></span>
+                            </h1>
+                            <p class="main__text">Le ayudamos a registrar su empresa, solicitar el EIN y abrir su cuenta bancaria en los Estados Unidos, para que se pueda enfocar en lo que mejor sabe hacer: su negocio.</p>
+                            <div class="main__btns d-flex">
+                                <button class="main__btn btn btn_orange" data-effect="mfp-zoom-in" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                <button class="main__btn btn btn_border" data-effect="mfp-zoom-in" dmx-on:click="scroll1.goto('#como_funciona')">¿Cómo funciona?</button>
+                            </div>
+                        </div>
+                        <div class="main__bg style12" data-aos>
+                            <div class="main__preview"><img srcset="solo/img/figures-1.1@2x.png 2x" src="/solo/img/figures-1.1@2x.png" alt=""></div>
+                            <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="/img/figures-1.2.png" alt=""></div>
+                            <div class="main__preview"><img src="/solo/img/Coin%20_.png" alt=""></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="steps steps__center center container-fluid">
+
+                    <div class="features__wrap container-fluid">
+                        <div class="features__row">
+                            <div class="features__col">
+                                <div class="features__icon">
+                                    <i class="bi bi-window-stack style32 white-centered"></i>
+                                </div>
+                                <p class="features__category">Tramitación el línea de forma rápida y sencilla</p>
+                                <p class="features__text">Obtenga los documentos de su empresa en formato digital en cualquiera de los 50 estados de los Estados Unidos.&nbsp;</p>
+                            </div>
+                            <div class="features__col">
+                                <div class="features__icon">
+                                    <i class="bi bi-person-bounding-box style32 white-centered"></i>
+                                </div>
+                                <p class="features__category">Solo necesita su pasaporte</p>
+                                <p class="features__text">El único documento necesario para poder hacer el trámite en su nombre es una imagen de su pasaporte.&nbsp;</p>
+                            </div>
+                            <div class="features__col">
+                                <div class="features__icon ">
+                                    <i class="bi bi-geo-alt style32 white-centered"></i>
+                                </div>
+                                <p class="features__category">Desde cualquier lugar del mundo</p>
+                                <p class="features__text">Puede abrir su empresa sin necesidad de estar en los Estados Unidos desde cualquier parte del mundo.&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productivity container-fluid">
+                    <div class="productivity__center center">
+                        <div class="productivity__container">
+                            <div class="productivity__bg"></div>
+                            <div class="productivity__row">
+                                <div class="productivity__wrap">
+                                    <div class="stage">NUESTRA VENTAJA</div>
+                                    <h2 data-aos="animation-scale-top" data-aos-duration="600" class="productivity__title h2">¿Por qué Venturebase?&nbsp;</h2>
+                                    <p class="productivity__info">Le ayudamos a comenzar y desarrollar su empresa en Estados Unidos, de la manera más sencilla posible con un servicio superior y una experiencia moderna.</p>
+                                    <button class="productivity__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience su Empresa</button>
+                                </div>
+                                <div class="productivity__gallery">
+                                    <div class="productivity__preview"><img srcset="img/figures-6.1@2x.png 2x" src="/img/figures-6.1.png" alt=""></div>
+                                    <div class="productivity__preview" data-aos="animation-translate-down" data-aos-duration="1000"><img srcset="img/figures-6.2@2x.png 2x" src="/img/figures-6.2.png" alt=""></div>
+                                </div>
+                                <div class="productivity__list">
+                                    <div class="productivity__item">
+                                        <div class="productivity__icon">
+                                            <!-- <img alt="" src="../img/ball@2x.png"> -->
+                                            <i class="bi-chat-right-text style32"></i>
+
+                                        </div>
+                                        <div class="productivity__details">
+                                            <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Comunicación de primer nivel</p>
+                                            <p class="productivity__text">Reciba información oportuna de manera eficiente y cuente con un sistema centralizado desde donde maneje toda la comunicación y documentos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="productivity__item">
+                                        <div class="productivity__icon">
+                                            <i class="bi bi-translate style32"></i>
+                                        </div>
+                                        <div class="productivity__details">
+                                            <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Atención y soporte bilingüe</p>
+                                            <p class="productivity__text">Ofrecemos asistencia en inglés y español; y contamos con soporte y servicio en más de 175 países.</p>
+                                        </div>
+                                    </div>
+                                    <div class="productivity__item">
+                                        <div class="productivity__icon">
+                                            <i class="bi bi-wallet2 style32"></i>
+                                        </div>
+                                        <div class="productivity__details">
+                                            <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Sin gastos ocultos</p>
+                                            <p class="productivity__text">¡Compare el precio total! Cada uno de nuestros paquetes de servicio ofrece un excelente valor.&nbsp;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <%- await include('/partials/newsletter-subscription-banner', Object.assign({}, locals)) %>
+                    <div class="advantages" style="">
+                        <div class="advantages__center center">
+                            <div class="advantages__head bottom_padding">
+                                <div class="advantages__photo"><img srcset="img/figures@2x.png 2x" src="/img/figures.png" alt=""></div>
+                                <p class="stage">De idea a ejecución</p>
+                                <h2 class="advantages__title h2" data-aos="animation-scale-top" data-aos-duration="600">Comience su empresa con Venturebase&nbsp;</h2>
+                            </div>
+                            <div class="advantages__list d-flex flex-xxl-column flex-column">
+                                <div class="advantages__item ">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview" style="/* margin-left: 0px */"><img src="/img/Empresa.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt="" class="visually-hidden"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt="" class="visually-hidden"></div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="advantages__wrap d-flex">
+                                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Registro de empresa en USA</h2>
+                                            <p class="advantages__text">Presentamos todos los formularios, pagamos las tasas, conseguimos un agente registrado y nos ocupamos de todos los trámites.</p><button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('registro-empresa')">Conozca Más</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="advantages__item flex-row-reverse">
+                                    <div class="advantages__bg container-fluid">
+                                        <div class="advantages__preview"><img src="/img/Ein.png" alt="" class="style101" style="/* width: 120% */ /* margin-right: -68px */"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/triangle@2x.png 2x" src="/img/triangle.png" alt="" class="visually-hidden"></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt="" class="visually-hidden"></div>
+                                    </div>
+                                    <div class="advantages__wrap d-flex">
+                                        <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/chat@2x.png 2x" src="/img/chat.png" alt=""></div>
+                                        <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Solicitud del EIN o ITIN</h2>
+                                        <p class="advantages__text">Obtenga una identificación fiscal única (número de identificación del empleador) del IRS que puede usar con Shopify, Google Ads, Stripe.</p><button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('ein')">Conozca Más</button>
+                                    </div>
+                                </div>
+                                <div class="advantages__item">
+                                    <div class="advantages__bg">
+                                        <div class="advantages__preview"><img src="../img/Banking.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt="" class="visually-hidden"></div>
+                                    </div>
+                                    <div class="advantages__wrap d-flex">
+                                        <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img src="/img/figures-2.5@2x.png" alt=""></div>
+                                        <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de cuenta bancaria en los Estados Unidos</h2>
+                                        <p class="advantages__text">Abrir una cuenta bancaria le ofrece la posibilidad de operar completamente en línea<span style="color: var(--body-text); font-family: var(--body-font); font-size: var(--text-body);">, hacer y recibir pagos, retirar dinero con una tarjeta de débito internacional, simplificar su contabilidad y establecer credibilidad con sus clientes y proveedores.</span></p><button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('cuenta-bancaria')">Conozca Más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="additiona_services_banner" style="margin-bottom: 120px;">
+                        <div class="offer__center center">
+                            <div class="offer__container d-flex align-items-center flex-md-column flex-lg-row flex-xxl-row align-items-lg-start flex-xl-row align-items-xl-start" style="/* padding: 60px */">
+                                <div class="d-flex flex-column w-100 pe-xxl-5">
+                                    <p class="stage text-xxl-start ps-xxl-3 text-start ps-0">Cliente Destacado</p>
+                                    <h2 class="advantages__info text-start " data-aos="animation-scale-top" data-aos-duration="600" style="/* font-size: 32px */">Conoce a Mario</h2>
+                                    <ul class="list-group list-group-flush" style="">
+                                        <li class="list-group-item style16" style="/* border-width: 0px */">Ciudadano no estadounidense de {{spotlightnationality.value}} sin número de seguro social (SSN)</li>
+                                        <li class="list-group-item style16">Mario quería registrar su empresa en USA y abrir una cuenta bancaria sin tener de viajar</li>
+                                        <li class="list-group-item style16">No sabía por donde comenzar y los servicios que consiguió no parecían profesionales</li>
+                                        <li class="list-group-item style16">Un amigo le recomendó nuestros servicios&nbsp;</li>
+                                        <li class="list-group-item style16">En un mes se registró su empresa, recibió su EIN y abrió su cuenta bancaria</li>
+                                    </ul>
+                                </div>
+                                <div class="about__user style19 d-flex flex-lg-column flex-column" style="width: 100%;">
+                                    <div class="about__ava style18 container-fluid"><img alt="" src="/img/avatar-2@2x.png"></div>
+                                    <div class="about__name">Mario Aranguren</div>
+                                </div>
+                                <div class="offer__preview"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steps container-fluid" style="margin-bottom: 96px;">
+                        <div class="steps__center center container-fluid mb-0" style="/* margin-bottom: 96px */">
+                            <p class="stage">Desarrollo de Negocio</p>
+
+
+                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="600">Atendemos sus Principales<br>Necesidades Comerciales</h2>
+                            <div class="steps__list mb-0" style="/* margin-bottom: 96px */">
+                                <div class="steps__item container-fluid border-0 ">
+                                    <div class="features__icon h100-w100 style37" data-aos="animation-scale-top" data-aos-duration="600">
+                                        <i class="bi bi-briefcase style32 white-centered"></i>
+                                    </div>
+                                    <h2 class="options__info" data-aos="animation-scale-top" data-aos-duration="600">Plan de Negocio</h2>
+                                    <p class="steps__text" data-aos="animation-scale-top" data-aos-duration="600">Desarrolle fácil y rápidamente un plan de negocios que cubra todos los aspectos básicos de la empresa para iniciar o desarrolla su proyecto.&nbsp;</p>
+                                </div>
+                                <div class="steps__item container-fluid border-0 ">
+                                    <div class="features__icon h100-w100 style37" data-aos="animation-scale-top" data-aos-duration="600">
+                                        <i class="bi bi-palette2 style32 white-centered"></i>
+                                    </div>
+                                    <h2 class="options__info" data-aos="animation-scale-top" data-aos-duration="600">Creación de Marca&nbsp;</h2>
+                                    <p class="steps__text" data-aos="animation-scale-top" data-aos-duration="600">Obtenga un nombre libre de conflictos de marca, diseño de logo, dominio web, correo electrónico comercial y más para mercadear su negocio.&nbsp;</p>
+                                </div>
+                                <div class="steps__item container-fluid border-0 style33 text-center">
+                                    <div class="features__icon h100-w100 style37" data-aos="animation-scale-top" data-aos-duration="600">
+                                        <i class="bi bi-window-sidebar style32 white-centered"></i>
+                                    </div>
+                                    <h2 class="options__info" data-aos="animation-scale-top" data-aos-duration="600">Presencia Web</h2>
+                                    <p class="steps__text" data-aos="animation-scale-top" data-aos-duration="600">Herramientas para establecer una imagen confiable para su nueva compañía. Página web, e-commerce o plataformas alternativas.</p>
+                                </div>
+                                <div class="steps__item container-fluid border-0 ">
+                                    <div class="features__icon h100-w100 style37" data-aos="animation-scale-top" data-aos-duration="600">
+                                        <i class="bi bi-paypal style32 white-centered"></i>
+                                    </div>
+                                    <h2 class="options__info" data-aos="animation-scale-top" data-aos-duration="600">Marketplaces y Pagos</h2>
+                                    <p class="steps__text" data-aos="animation-scale-top" data-aos-duration="600">Le apoyamos en la creación de sus cuenta y perfiles en las principales plataformas de pago y marketplaces en línea como Amazon, Stripe y Paypal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="steps container-fluid" style="margin-bottom: 96px;">
+                        <div class="steps__center center container-fluid mb-0" style="margin-bottom: 96px;">
+                            <div class="main__partners container-fluid style35">
+                                <div class="main__info">Algunos de nuestros aliados financieros</div>
+                                <div class="main__list d-flex flex-column flex-md-row">
+                                    <div class="main__logo"><img src="/img/TDBank.png" alt=""></div>
+                                    <div class="main__logo"><img src="/img/Wise.png" alt=""></div>
+                                    <div class="main__logo"><img src="/img/Chase.png" alt=""></div>
+                                    <div class="main__logo"><img src="/img/BankofAmerica.png" alt=""></div>
+                                    <div class="main__logo"><img src="/img/Mercury.png" alt=""></div>
+                                    <div class="main__logo"><img src="/img/Citi.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- await include('/partials/promo-banner', Object.assign({}, locals, {Button_CTA:'Conozca Más',Heading:'Descubra los Servicios de Desarrollo de Negocio'})) %>
+
+                        <div class="questions container-fluid" id="como_funciona">
+                            <div class="center container-fluid text-start d-none d-md-block">
+
+                                <div class="d-flex flex-column align-items-center">
+                                    <p class="stage">¿Como funciona?</p>
+                                    <h2 class="steps__title h2 centered text-center" data-aos="animation-scale-top" data-aos-duration="600">Inicie su negocio en USA en minutos</h2>
+                                </div>
+                                <ul class="nav nav-tabs questions__nav flex-row" id="navTabs1_tabs" role="tablist" style="border-bottom: 0px;">
+                                    <li class="nav-item questions__link" style="/* margin-right: 0px */">
+                                        <a class="questions__link active pt-2 pb-2" id="navTabs1_1_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true">Formulario</a>
+                                    </li>
+                                    <li class="nav-item questions__link">
+                                        <a class="questions__link pt-2 pb-2 " id="navTabs1_2_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Registro</a>
+                                    </li>
+                                    <li class="nav-item questions__link">
+                                        <a class="questions__link pt-2 pb-2" id="navTabs1_3_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_3" role="tab" aria-controls="navTabs1_3" aria-selected="false">Emisión de EIN</a>
+
+                                    </li>
+                                    <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab1" data-bs-toggle="tab" data-bs-target="#navTabs1_4" role="tab" aria-controls="navTabs1_3" aria-selected="false">Documentos</a></li>
+                                    <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab2" data-bs-toggle="tab" data-bs-target="#navTabs1_5" role="tab" aria-controls="navTabs1_3" aria-selected="false">Cuenta Bancaria</a></li>
+                                    <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab3" data-bs-toggle="tab" data-bs-target="#navTabs1_6" role="tab" aria-controls="navTabs1_3" aria-selected="false">Servicios</a></li>
+                                </ul>
+                                <div class="tab-content" id="navTabs1_content">
+                                    <div class="tab-pane fade show active" id="navTabs1_1" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-766.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Formulario de aplicación</h2>
+                                                    <p class="advantages__text">En pocos minutos, complete el formulario en nuestro sitio web con la información de la empresa, indicando el tipo de empresa que desea registrar y enviando una imagen del pasaporte vigente de cada propietario. Así se comienza el proceso de apertura de la empresa.&nbsp;</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="navTabs1_2" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-767.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Registro de la empresa LLC en USA&nbsp;</h2>
+                                                    <p class="advantages__text">Completamos el papeleo y organizamos toda la información necesaria para el registro de su empresa en su nombre. Los tiempos varían en función de los sistemas y procesos de cada estado. Una vez que se complete el registro, recibirá una copia digital del documento.</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="navTabs1_3" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-781.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Emisión del EIN</h2>
+                                                    <p class="advantages__text">Tan pronto como recibamos la confirmación de registro de su empresa, prepararemos y enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos tiempo. El tiempo para esta etapa depende del tiempo de procesamiento interno del IRS .</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="navTabs1_4" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-765.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Entrega de los documentos la empresa</h2>
+                                                    <p class="advantages__text">Recibirá los documentos de su empresa, incluidos el certificado de constitución de la empresa y el número de identificación de empleado (EIN por su siglas en inglés), a través de nuestra plataforma en línea. Tan pronto como se reciben los documentos, se puede comenzar la solicitud de apertura de la cuenta bancaria.&nbsp;</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="navTabs1_5" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-764.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de cuenta bancaria en USA</h2>
+                                                    <p class="advantages__text">Una vez que reciba su EIN, es momento de abrir su cuenta bancaria en los Estados Unidos. Contamos con múltiples alternativas bancarias. Una vez que los bancos revisen su aplicación y su cuenta esté aprobada, puede programar su plataforma de pagos como Stripe y comenzar a aceptar transacciones globales en dólares americanos.&nbsp;</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="navTabs1_6" role="tabpanel">
+                                        <div class="advantages__item ">
+                                            <div class="advantages__bg">
+                                                <div class="advantages__preview"><img src="/img/Group-768.png" alt="" class="img-process"></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/img/cube.png" alt=""></div>
+                                                <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/img/ball.png" alt=""></div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="advantages__wrap d-flex flex-column align-items-start">
+                                                    <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/cursor.png" alt=""></div>
+                                                    <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Servicios continuos</h2>
+                                                    <p class="advantages__text">Le ofrecemos servicios continuos para mantener a su empresa en cumplimiento con todos los requerimientos del estado y servicios para el desarrollo de su negocio. Para que se pueda enfocar en la gestión y desarrollo de su empresa.&nbsp;</p>
+                                                    <button class="advantages__btn btn btn_border" dmx-on:click="browser1.goto('planes')">Comience Ahora</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="center container-fluid d-md-none">
+                                <div class="muze-section mb-4 mt-3 mt-md-4">
+                                    <p class="stage">¿Como funciona?</p>
+                                    <h2 class="border-bottom border-gray-200 ">
+                                        <span class="steps__title h2 ">Inicie su negocio en minutos</span>
+                                    </h2>
+
+                                    <div class="accordion muze-collapes" id="pricingboxes">
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingOne">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn btn-light w-100 text-start p-3 rounded-0 style141 style34" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Formulario de Aplicación
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="pricingOne" data-bs-parent="#pricingboxes">
+                                                <div class="card-body">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-766-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">En menos pocos minutos, complete el formulario en nuestro sitio web con la información de la empresa, indicando el tipo de empresa que desea registrar y enviando una imagen del pasaporte vigente de cada propietario. Así se comienza el proceso de apertura de la empresa.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingTwo">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn btn-light w-100 text-start collapsed p-3 rounded-0 style140" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Registro de Empresa</button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="pricingTwo" data-bs-parent="#pricingboxes">
+                                                <div class="card-body lh-lg pt-0 px-0">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-767-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">Completamos el papeleo y organizamos toda la información necesaria para el registro de su empresa y solicitud del EIN number ante el estado en su nombre. En la mayoría de los estados, el proceso de registro toma menos de 5 días hábiles. Los tiempos varían en función de los sistemas y procesos de cada estado. Una vez que se complete el proceso, recibirá una copia digital del documento</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingThree">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn w-100 text-start collapsed p-3 rounded-0 btn-light style142" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        Emisión del EIN
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="pricingThree" data-bs-parent="#pricingboxes">
+                                                <div class="card-body lh-lg pt-0 px-0">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-781-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">Tan pronto como recibamos la confirmación del registro ante el estado, enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos de un día. Si ninguno de los miembros posee SSN, debido a las interrupciones de COVID-19, el IRS puede demorar hasta 50 días en procesar su documento.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingFour">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn btn-light w-100 text-start collapsed p-3 rounded-0 style141" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                        Entrega de los Documentos la Empresa
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseFour" class="collapse" aria-labelledby="pricingFour" data-bs-parent="#pricingboxes">
+                                                <div class="card-body lh-lg pt-0 px-0">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-765-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">Recibas los documentos de su empresa, incluidos el certificado de constitución de la empresa y el número de identificación de empleado (EIN por su siglas en inglés), a través de nuestra plataforma en línea. Tan pronto como se reciben los documentos, se puede comenzar la solicitud de apertura de la cuenta bancaria.&nbsp;</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingfive">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn btn-light w-100 text-start collapsed p-3 rounded-0 style141" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                                        Apertura de Cuenta Bancaria
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefive" class="collapse" aria-labelledby="pricingfive" data-bs-parent="#pricingboxes">
+                                                <div class="card-body lh-lg pt-0 px-0">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-764-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">Tan pronto como recibamos la confirmación del registro ante el estado, enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos de un día. Si ninguno de los miembros posee SSN, debido a las interrupciones de COVID-19, el IRS puede demorar hasta 50 días en procesar su documento.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header p-0" id="pricingsix">
+                                                <h5 class="mb-0 d-grid">
+                                                    <button class="btn btn-light w-100 text-start collapsed p-3 rounded-0 style141" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                                        Servicios Continuos
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsesix" class="collapse" aria-labelledby="pricingsix" data-bs-parent="#pricingboxes">
+                                                <div class="card-body lh-lg pt-0 px-0">
+                                                    <div class="col-lg-10 col-xxl-8">
+                                                        <div class="advantages__preview centered"><img src="/img/Group-768-mobile.png" alt="" class="mt-2 mb-4 w-75"></div>
+                                                        <p class="text-gray-700">Le ofrecemos servicios continuos para mantener a su empresa en cumplimiento con todos los requerimientos del estado y servicios para el desarrollo de su negocio. Para que se pueda enfocar en la gestión y desarrollo de su empresa.&nbsp;</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <%- await include('/partials/reviews', Object.assign({}, locals)) %>
+                            <%- await include('/partials/comience-ahora-banner', Object.assign({}, locals)) %>
+                                <%- await include('/partials/footer', Object.assign({}, locals)) %>
+    </div>
+
+    <div class="popup mfp-hide" id="popup-sign-in">
+        <div class="popup__title h2">Sign in</div>
+        <div class="popup__variants"><a class="popup__variant" href="#"><img src="/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/img/apple.svg" alt="">Sign up via Apple</a></div>
+        <div class="popup__details">Or continue with email & password</div>
+        <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Password</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Sign In</a></div>
+        <div class="popup__note"> </div>
+    </div>
+    <!-- scripts-->
+
+    <script src="/js/aos.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/svg4everybody.min.js"></script>
+    <script src="/js/app-solo.js"></script>
+    <!-- Using App Connect Expressions in JavaScript Functions https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script>
+        function myFunction(){
+                var myVar = dmx.parse("var2.value");
+                console.log(myVar);
+            }
+    </script>
+
+
+    <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+
+    <script>
+        function myFunction2() {
+                var car = {type:"Fiat", model:"500", color:"blue&yellow"};
+                dmx.app.set('car', car);
+                console.log(car);
+             }		
+    </script>
+    <!-- <script src="pupeteer_example.js"></script> -->
+    <!-- <script src="testjs.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "security",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "wbQ4jhzCFgN3qgp",
+    "provider": "Single",
+    "connection": "db 2"
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

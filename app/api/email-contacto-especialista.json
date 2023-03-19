@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/inertia/dist/contucarga.html",
+      "linkedForm": "formcontactoespcialista"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "inputserviciocontacto",
+        "name": "inputserviciocontacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "correo-electronico-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:email": {}
+          }
+        },
+        "name": "correo-electronico-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "nombre-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "nombre-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "apellido-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "apellido-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "compania-contacto",
+        "name": "compania-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "numero-telefonico-contacto",
+        "name": "numero-telefonico-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "pagina-web-contacto",
+        "name": "pagina-web-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "industria-contacto",
+        "name": "industria-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "ciudad-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "ciudad-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "pais-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "pais-contacto"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "contact_form",
+                "column": "first_name",
+                "type": "text",
+                "value": "{{$_POST['nombre-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "last_name",
+                "type": "text",
+                "value": "{{$_POST['apellido-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "compania",
+                "type": "text",
+                "value": "{{$_POST['compania-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST['correo-electronico-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "telefono",
+                "type": "text",
+                "value": "{{$_POST['numero-telefonico-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "industria",
+                "type": "text",
+                "value": "{{$_POST['industria-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "pais",
+                "type": "text",
+                "value": "{{$_POST['pais-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "ciudad",
+                "type": "text",
+                "value": "{{$_POST['ciudad-contacto']}}"
+              },
+              {
+                "table": "contact_form",
+                "column": "servicio_de_interes",
+                "type": "text",
+                "value": "{{$_POST.inputserviciocontacto}}"
+              }
+            ],
+            "table": "contact_form",
+            "returning": "id",
+            "query": "INSERT INTO contact_form\n(first_name, last_name, compania, email, telefono, industria, pais, ciudad, servicio_de_interes) VALUES (:P1 /* {{$_POST['nombre-contacto']}} */, :P2 /* {{$_POST['apellido-contacto']}} */, :P3 /* {{$_POST['compania-contacto']}} */, :P4 /* {{$_POST['correo-electronico-contacto']}} */, :P5 /* {{$_POST['numero-telefonico-contacto']}} */, :P6 /* {{$_POST['industria-contacto']}} */, :P7 /* {{$_POST['pais-contacto']}} */, :P8 /* {{$_POST['ciudad-contacto']}} */, :P9 /* {{$_POST.inputserviciocontacto}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST['nombre-contacto']}}"
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST['apellido-contacto']}}"
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST['compania-contacto']}}"
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST['correo-electronico-contacto']}}"
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{$_POST['numero-telefonico-contacto']}}"
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{$_POST['industria-contacto']}}"
+              },
+              {
+                "name": ":P7",
+                "type": "expression",
+                "value": "{{$_POST['pais-contacto']}}"
+              },
+              {
+                "name": ":P8",
+                "type": "expression",
+                "value": "{{$_POST['ciudad-contacto']}}"
+              },
+              {
+                "name": ":P9",
+                "type": "expression",
+                "value": "{{$_POST.inputserviciocontacto}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "querytableespecialista"
+        }
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Contacto Especialista",
+          "fromName": "Juan",
+          "importance": 2,
+          "toEmail": "{{$_POST['correo-electronico-contacto']}}",
+          "replyTo": "info@contucarga.com",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "toName": "{{$_POST['nombre-contacto']}}",
+          "body": "Hola {{$_POST['nombre-contacto']}}, hemos recibido su mensaje y pronto un especialista se pondrá en contacto con usted a través de la dirección de correo electrónico {{$_POST['correo-electronico-contacto']}} para conversar sobre su necesidad de {{$_POST.inputserviciocontacto}}"
+        }
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Contacto Especialista - Formulario Página Web",
+          "fromName": "Contucarga",
+          "importance": 2,
+          "toEmail": "juanpabloravelo@gmail.com",
+          "replyTo": "info@contucarga.com",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "body": "Hola Equipo \nUn visitante de la página web ha realizado una solicitud de contacto a través del formulario en línea. \nA continuación la información para dar respuesta a la solicitud: \n\nServicio: {{$_POST.inputserviciocontacto}}\nContacto: {{$_POST['nombre-contacto']+' '+$_POST['apellido-contacto']}}\nTeléfono: {{$_POST['numero-telefonico-contacto']}}\nCorreo: {{$_POST['correo-electronico-contacto']}}\nCompañía: {{$_POST['compania-contacto']}}\nPágina web: {{$_POST['pagina-web-contacto']}}\nCiudad - País: {{$_POST['ciudad-contacto']+' - '+$_POST['pais-contacto']}}\n\nDemosle respuesta a la solicitud antes de las 48 horas para incrementar la oportunidad de ganar un nuevo negocio!\n\nEquipo de Automatización \nContucarga",
+          "toName": "Dirección Contucarga"
+        }
+      }
+    ]
+  }
+}

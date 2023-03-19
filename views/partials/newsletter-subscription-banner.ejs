@@ -1,0 +1,26 @@
+<dmx-datetime id="var1"></dmx-datetime>
+<div is="dmx-bs5-toasts" id="toasts1"></div><!-- Wappler include is="dmx-app" id="newslettersubscriptionbanner" bootstrap5="cdn" appConnect="local" jquery_slim_33="cdn" fontawesome_4="cdn" bootstrap4="local" components="{dmxValidator:{},dmxBootstrap4Toasts:{},dmxBootstrap5Toasts:{},dmxFormatter:{},dmxBrowser:{}}" -->
+<div is="dmx-browser" id="browser1"></div>
+
+<div class="additiona_services_banner newsletter container-fluid" style="/* margin-bottom: 40px */">
+
+    <div class="offer__center invite__center center">
+        <div class="offer__container__dark invite__bg row additiona_services_banner ms-0 me-0">
+            <div class="d-flex flex-column justify-content-start col-lg-7 col-xxl-6 text-lg-start">
+                <h2 class="advantages__info h2" data-aos="animation-scale-top" data-aos-duration="600" style="/* font-size: 1rem */ color: #ffffff;">Información directo en su correo</h2>
+                <h3 class="h5 text-center text-lg-start" data-aos="animation-scale-top" data-aos-duration="600" style="color: #a1afbb; font-size: 1rem;">Únase nuestra lista de contactos y reciba información empresarial de USA</h3>
+            </div>
+            <div class="col-12 col-lg-5 col-xxl-6 align-self-xxl-center align-self-lg-center ps-xxl-4">
+
+
+                <form id="formnewsletter" class="style73" method="post" is="dmx-serverconnect-form" action="/api/newsletter_submission" dmx-on:success="run([{'toast.show':{message:'Ha ingresado a nuestra lista de correos',title:'Hemos recibido su sulicitud'}},{run:{action:`formnewsletter.reset()`}},{run:{action:`formnewsletter.contactemail.disable();formnewsletter.bs4btn.disable()`}}])" dmx-on:invalid="toasts1.show({message: 'Por favor ingrese un correo válido ', title: 'Correo Invalido'});formnewsletter.reset()">
+                    <input id="contactemail" name="email" type="email" class="form-control input-form style25 mb-2" placeholder="Correo electrónico" required="" data-rule-email="" data-msg-email="Por favor ingrese una dirección de correo válida" data-msg-required="Este campo es requerido" style="/* text-align: center */">
+                    <input id="text1" name="datetime" class="form-control d-none" dmx-bind:value="var1.datetime">
+                    <input id="pathname" name="pathname" class="form-control d-print-none d-none" dmx-bind:value="browser1.location.pathname">
+
+                    <button style="min-width: 180px;" class="offer__btn btn btn_orange style138 mb-0 style73 ms-xxl-2" type="submit">Susbcríbase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

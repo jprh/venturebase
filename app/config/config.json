@@ -1,0 +1,11 @@
+{
+  "debug": true,
+  "secret": "TVhurxxe0R3qZyh",
+  "cors": {
+    "origin": "*"
+  },
+  "stripe": {
+    "secretKey": "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",
+    "endpointSecret": "whsec_nNmCEcJgyBEU9lCPOMzkd5WFlmHchlrV"
+  }
+}

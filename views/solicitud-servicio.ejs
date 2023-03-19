@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="ac:route" content="/solicitud-servicio">
+    <base href="/">
+    <script src="dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="utf-8">
+    <title>Socitud de Servicio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="https://solo/img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="A Premium SaaS Landing Page Kit">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Solo">
+    <meta name="twitter:description" content="A Premium SaaS Landing Page Kit">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="https://solo/img/twitter-card.png">
+    <meta property="og:title" content="Solo">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="https://ui8.net/ui8/products/solo-saas-landing-page-kit">
+    <meta property="og:image" content="https://solo/img/fb-og-image.png">
+    <meta property="og:description" content="A Premium SaaS Landing Page Kit">
+    <meta property="og:site_name" content="Solo">
+    <meta property="fb:admins" content="132951670226590">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" media="all" href="css/app-solo.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}
+    </script>
+
+    <script defer="" src="/f97fc317-3fe8-4b45-83d5-8fef112023ad/scripts/bundle.js"></script>
+
+    <script src="dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <script src="dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <script src="dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <script src="dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+    <script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+    <script src="dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="indexsolicitudservicio">
+    <dmx-value id="varformsteps"></dmx-value>
+
+    <dmx-value id="spotlightnationality" dmx-bind:value="'Venezuela'"></dmx-value>
+
+    <div is="dmx-browser" id="browser1"></div>
+    <!-- Using App Connect Expressions in JavaScript Functions -->
+    <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+        runJS: {function: "myFunction", output: true}
+    }</script>
+    <dmx-value id="var2" dmx-bind:value="'JP Rules The Land '"></dmx-value>
+
+    <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script is="dmx-flow" id="flow2" type="text/dmx-flow" autorun="">{
+        runJS: {function: "myFunction2", output: true}
+    }</script>
+
+    <dmx-smooth-scroll id="scroll1"></dmx-smooth-scroll>
+
+    <script>
+        console.log(localStorage.getItem('darkMode'));
+            if (localStorage.getItem('darkMode') === "on"){
+                document.body.classList.add("dark");
+                document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+    </script>
+
+    <div class="page container-fluid">
+
+        <div class="contact ">
+            <div class="contact__center center d-flex flex-row justify-content-start">
+                <div class="contact__bg">
+                    <div class="contact__preview"><img srcset="img/figures-2.1@2x.png 2x" src="img/figures-2.1.png" alt=""></div>
+                    <div class="contact__preview" data-aos="animation-translate-up" data-aos-duration="1000"><img srcset="img/figures-2.2@2x.png 2x" src="img/figures-2.2.png" alt=""></div>
+                    <div class="contact__preview" data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="400"><img srcset="img/figures-2.3@2x.png 2x" src="img/figures-2.3.png" alt=""></div>
+                    <div class="contact__preview" data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="800"><img srcset="img/figures-2.4@2x.png 2x" src="img/figures-2.4.png" alt=""></div>
+                    <div class="contact__preview"><img srcset="img/figures-2.5@2x.png 2x" src="img/figures-2.5.png" alt=""></div>
+                </div>
+                <div class="contact__wrap ">
+                    <h1 class="contact__title h2" data-aos="animation-scale-top" data-aos-duration="600">Contact Us</h1>
+                    <div class="contact__info">Questions, bug reports, feedback.</div>
+                    <form class="contact__form" id="formsolicitudservicios">
+
+                        <div class="row">
+                            <input id="emailservicios" name="email" type="email" class="form-control field__input mb-3" placeholder="Ingrese su correo electrónico">
+                            <input id="nombreservicios" name="name" class="form-control field__input mb-3 hover" placeholder="Ingrese su nombre">
+                            <input id="telefonoservicios" name="phone" type="tel" class="form-control field__input mb-3" placeholder="Ingrese su correo electrónico">
+                            <input id="addressservicios" name="address" class="form-control field__input mb-3" placeholder="Ingrese su dirección">
+                            <div class="d-flex flex-row ps-0 pe-0">
+                                <input id="cityservicios" name="city" class="form-control field__input mb-3 me-3" placeholder="Ciudad">
+                                <input id="Regionservicios" name="regionestado" class="form-control field__input mb-3" placeholder="Region o estado">
+                            </div>
+                            <div class="d-flex flex-row ps-0 pe-0">
+                                <input id="paisservicios" name="pais" class="form-control field__input mb-3 me-3" placeholder="Ingrese su ciudad">
+                                <input id="zipservicios" name="codigopostal" class="form-control field__input mb-3" placeholder="Código postal">
+                            </div>
+                            <button class="contact__btn btn btn_orange">Send now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container page-home__brand-styles">
+            <div class="container-inner">
+            </div>
+        </div>
+        <%- await include('/partials/footer', Object.assign({}, locals)) %>
+    </div>
+    <!-- scripts-->
+
+    <script src="js/svg4everybody.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/app-solo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Using App Connect Expressions in JavaScript Functions https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script>
+        function myFunction(){
+                var myVar = dmx.parse("var2.value");
+                console.log(myVar);
+            }
+    </script>
+
+    <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script>
+        function myFunction2() {
+                var car = {type:"Fiat", model:"500", color:"blue&yellow"};
+                dmx.app.set('car', car);
+             }		
+    </script>
+</body>
+
+</html>

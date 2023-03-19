@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/test-views.ejs",
+      "linkedForm": "serverconnectform1"
+    },
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "name",
+        "name": "name"
+      },
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:email": {}
+          }
+        },
+        "ui": {
+          "input": "email"
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "company",
+        "name": "company"
+      },
+      {
+        "type": "text",
+        "fieldName": "role",
+        "name": "role"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "insert1",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "company",
+                "column": "name",
+                "type": "text",
+                "value": "{{$_POST.company}}"
+              }
+            ],
+            "table": "company",
+            "returning": "companyid",
+            "query": "INSERT INTO company\n(name) VALUES (:P1 /* {{$_POST.company}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.company}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "output": true
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "users",
+                "column": "first_name",
+                "type": "text",
+                "value": "{{$_POST.name}}"
+              },
+              {
+                "table": "users",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "table": "users",
+                "column": "company_id",
+                "type": "number",
+                "value": "{{insert1.identity}}"
+              },
+              {
+                "table": "users",
+                "column": "user_role_id",
+                "type": "number",
+                "value": "{{$_POST.role}}"
+              }
+            ],
+            "table": "users",
+            "returning": "id",
+            "query": "INSERT INTO users\n(first_name, email, company_id, user_role_id) VALUES (:P1 /* {{$_POST.name}} */, :P2 /* {{$_POST.email}} */, :P3 /* {{insert1.identity}} */, :P4 /* {{$_POST.role}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.name}}"
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{insert1.identity}}"
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.role}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "output": true
+      }
+    ]
+  }
+}
