@@ -1,0 +1,29 @@
+{
+  "partial-test.ejs": {
+    "description": ""
+  },
+  "partial-testing.ejs": {
+    "description": ""
+  },
+  "contact-modal.ejs": {
+    "description": ""
+  },
+  "promo-banner.ejs": {
+    "layoutPage": "layoutpagetest"
+  },
+  "promobanerpartial.ejs": {
+    "description": ""
+  },
+  "Test-to-delete.ejs": {
+    "description": ""
+  },
+  "process-section-dynamic.ejs": {
+    "description": ""
+  },
+  "stylesheets-and-metatags.ejs": {
+    "description": ""
+  },
+  "newsletter-subscription-banner.ejs": {
+    "description": ""
+  }
+}

@@ -1,0 +1,40 @@
+<!-- Wappler include fontawesome_5="cdn" bootstrap5="cdn" is="dmx-app" id="partialfaq" appconnect="local" jquery_slim_35="cdn" components="{dmxStateManagement:{},dmxBrowser:{},dmxDataTraversal:{}}" -->
+<div is="dmx-browser" id="browser1"></div>
+
+<!-- the slug parameter in GET passs the data from the partial to the database query. The slug is generated dynamicaly from the pathname using the browser element -->
+
+<dmx-serverconnect id="faqs" url="api/query-faq-db" dmx-param:slug="browser1.location.pathname"></dmx-serverconnect>
+<dmx-data-view id="data_view1" dmx-bind:data="faqs.data.faqobject" filter="tag"></dmx-data-view>
+<div class="review">
+    <div class="review__center center">
+        <div class="row">
+            <div class="container">
+                <div class="muze-section mb-4 mt-3 mt-md-4">
+                    <h2 class="advantages__title h2 border-bottom border-gray-200 pb-3 pb-md-4 h1 border-top pt-4 pt-xxl-5 mb-0 text-start text-md-center">
+                        <span class="d-block mb-lg-3 mt-md-4 pt-lg-2">Preguntas Frecuentes</span>
+                    </h2>
+
+                    <div class="accordion muze-collapes" id="pricingboxes" is="dmx-repeat" dmx-bind:repeat="faqs.data.faqobject">
+
+                        <div class="card">
+                            <div class="card-header p-0" dmx-bind:id="pricingOne{{$index}">
+                                <h3 class="mb-0 d-grid">
+                                    <button class="btn btn-light w-100 text-start p-3 rounded-0 style141 collapsed" type="button" data-bs-toggle="collapse" dmx-bind:data-bs-target="#collapseOne{{$index}}" aria-expanded="false" dmx-bind:aria-controls="collapseOne{{$index}" style="cursor: pointer;">
+                                        {{question}}
+                                    </button>
+                                </h3>
+                            </div>
+                            <div dmx-bind:id="collapseOne{{$index}}" class="collapse" dmx-bind:aria-labelledby="pricingOne{{$index}" data-bs-parent="#pricingboxes" dmx-bind:show="($index == 0)" data-parent="#pricingboxes">
+                                <div class="card-body lh-lg pt-0 px-0">
+                                    <div class="col-lg-11 col-xxl-10">
+                                        <p class="text-gray-700 text-start">{{answer}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

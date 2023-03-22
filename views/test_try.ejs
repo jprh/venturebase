@@ -1,0 +1,150 @@
+<!doctype html>
+<html style="">
+
+<head>
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <meta name="ac:route" content="/test2">
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <link rel="stylesheet" href="/bootstrap/5/css/bootstrap.min.css" />
+    <!-- <script src="/js/my-element.ejs"></script> -->
+
+    <script>
+        function myFunction(){
+                        var myVar = dmx.parse("var2.value"); 
+                        console.log(myVar);
+                    }
+    </script>
+
+    <script>
+        function myFunctions(){
+                        var personname="pepe";
+                        dmx.app.set('personname', personname);
+                        console.log(personname);
+                    }
+    </script>
+
+    <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+    <script>
+        function myFunction2() {
+                        var car = {type:"Fiat", model:"500", color:"blue&yellow"};
+                        dmx.app.set('car', car);
+                        console.log(car);
+                        }		
+    </script>
+
+</head>
+
+<body is="dmx-app" id="test_try">
+    <dmx-serverconnect id="serverconnect1" url="/api/query_cars_test"></dmx-serverconnect>
+
+    <dmx-value id="var3" dmx-bind:value="'NYC'"></dmx-value>
+    <dmx-value id="var2" dmx-bind:value="'JP rules them all'"></dmx-value>
+
+    <div class="container wappler-block">
+        <div class="row">
+            <div>
+                <h1>Heading - {{var2.value}} - {{var3.value}}&nbsp;&nbsp; </h1>
+                <h1>ML {{serverconnect1.data.query[0].make}}</h1>
+                <button id="btn1" class="btn" dmx-on:click="run({runJS:{function:'myFunction'}})">Button</button>
+                <button id="btn2" class="btn" dmx-on:click="run({runJS:{function:'myFunctions'}})">Button</button>
+                <button id="btn4" class="btn" dmx-on:click="run({runJS:{function:'myFunction2'}})">Button</button>
+                <button id="btn5" class="btn" dmx-on:click="run({runJS:{function:'callpersonname'}})">Button</button>
+            </div>
+            <div class="text-center pt-5 pb-5 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                <h4 class="">Fancy display heading <br><small class="text-muted">With faded secondary text</small></h4>
+                <img class="wappler-type-picture mb-3">
+                <p>A nice paragraph</p>
+            </div>
+        </div>
+    </div>
+    <div class="container wappler-block">
+        <div class="row">
+            <div class="col-12 col-md-6 align-self-md-center">
+                <img class="wappler-type-picture w-100" height="200">
+            </div>
+            <div class="align-self-center col-12 col-md-6">
+                <div class="row">
+                    <div class="col">
+                        <h4>Fancy display heading</h4>
+                        <p>A nice paragraph</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Fancy display heading</h4>
+                        <p>A nice paragraph</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Fancy display heading</h4>
+                        <p>A nice paragraph</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Fancy display heading</h4>
+                        <p>A nice paragraph</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <dmx-value id="var1" dmx-bind:value="'JPRH'"></dmx-value>
+    <div class="container wappler-block pt-5 pb-5">
+        <ul class="nav nav-tabs" id="navTabs1_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link test active" id="navTabs1_1_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true" style="bac">Home</a>
+            </li>
+            <li class="nav-item style30">
+                <a class="nav-link test" id="navTabs1_2_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link test" id="navTabs1_3_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_3" role="tab" aria-controls="navTabs1_3" aria-selected="false">Messages</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="navTabs1_content">
+            <div class="tab-pane fade show active" id="navTabs1_1" role="tabpanel">
+                <p>Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.</p>
+            </div>
+            <div class="tab-pane fade" id="navTabs1_2" role="tabpanel">
+                <p>Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</p>
+            </div>
+            <div class="tab-pane fade" id="navTabs1_3" role="tabpanel">
+                <p>Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                <h4>Fancy display heading<br><small class="text-muted">With faded secondary text</small></h4>
+                <p>A nice paragraph</p>
+                <button class="btn btn-primary">Button</button>
+            </div>
+        </div>
+
+    </div>
+    <my-element name="Doreen & {{var1.value}}" surname="{{var1.value}} Perez" parragraph="This is a simple test" color="Blue"></my-element>
+    <my-element name="Bruno" surname="& {{var1.value}}"></my-element>
+    <our-element name="Maria Luisa" surname="Ravelo {{var1.value}} {{serverconnect1.data.query[0].model}}" heading="Fancy fancy super fancy header" style.color="red"></our-element>
+
+
+    <script src="/bootstrap/5/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/our-element.js"></script>
+    <script src="/testjs.js"></script>
+    <!-- <script src="/pupeteer_example.js"></script> -->
+</body>
+
+
+
+</html>

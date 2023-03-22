@@ -1,0 +1,22 @@
+/usr/sbin/mysqld, Version: 8.0.31 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-03-10T15:34:20.303203Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2023-03-10T15:34:29.260571Z	    8 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-03-10T15:34:29.264784Z	    9 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-03-10T15:34:29.272380Z	   10 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-03-10T15:34:29.282206Z	    9 Query	select *, `authorsid` as `__dmxPrimary` from `authors`
+2023-03-10T15:34:29.284805Z	    8 Query	select *, `authorsid` as `__dmxPrimary` from `authors`
+2023-03-10T15:34:29.289949Z	   10 Query	select `users`.*, `company`.*, `user_role`.* from `users` inner join `company` on `company`.`companyid` = `users`.`company_id` inner join `user_role` on `user_role`.`id` = `users`.`user_role_id`
+2023-03-10T15:34:29.364720Z	   10 Query	select * from `blog_posts`
+2023-03-10T15:34:38.431524Z	   11 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-03-10T15:34:38.434036Z	   11 Query	select * from `cars`
+2023-03-10T15:34:59.742066Z	    9 Quit	

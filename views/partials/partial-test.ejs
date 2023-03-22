@@ -1,0 +1,27 @@
+<!-- Wappler include fontawesome_5="cdn" bootstrap5="cdn" is="dmx-app" id="partialtest" appConnect="local" jquery_slim_35="cdn" components="{dmxBootstrap5Navigation:{},dmxBrowser:{}}" -->
+<div is="dmx-browser" id="browser1"></div>
+<nav dmx-class:bg-light="browser1.scrollY.position" class="header navbar navbar-expand-lg header__center navbar-expand navbar-dark fixed-top">
+
+    <div class="container header__center center">
+        <a class="header__logo" href="/">
+            <img class="header__pic header__pic_dark" src="img/logo-dark.png" alt="" />
+            <img class="header__pic header__pic_light" src="img/logo-light.png" alt="" />
+        </a>
+        <div class="header__wrapper d-flex justify-content-end">
+            <div class="header__nav">
+                <a class="header__link" href="registro-empresa">Registro Empresa</a>
+                <a class="header__link" href="cuenta-bancaria">Cuenta Bancaria</a>
+                <a class="header__link" href="ein">EIN</a>
+                <a class="header__link" href="nosotros">Nosotros</a>
+                <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Contáctenos</a>
+                <a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Comience su Trámite</a>
+            </div>
+            <!-- <picture class="header__preview">
+                <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="img/header-pic.png" alt="" />
+            </picture> -->
+        </div>
+    </div>
+
+
+    <button class="header__burger"></button>
+</nav>

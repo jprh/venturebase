@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "users",
+                "column": "*"
+              },
+              {
+                "table": "company",
+                "column": "*"
+              },
+              {
+                "table": "user_role",
+                "column": "*"
+              }
+            ],
+            "table": {
+              "name": "users"
+            },
+            "primary": "id",
+            "joins": [
+              {
+                "table": "company",
+                "column": "*",
+                "type": "INNER",
+                "clauses": {
+                  "condition": "AND",
+                  "rules": [
+                    {
+                      "table": "company",
+                      "column": "companyid",
+                      "operator": "equal",
+                      "value": {
+                        "table": "users",
+                        "column": "company_id",
+                        "type": "number"
+                      },
+                      "operation": "="
+                    }
+                  ]
+                },
+                "primary": "companyid"
+              },
+              {
+                "table": "user_role",
+                "column": "*",
+                "type": "INNER",
+                "clauses": {
+                  "condition": "AND",
+                  "rules": [
+                    {
+                      "table": "user_role",
+                      "column": "id",
+                      "operator": "equal",
+                      "value": {
+                        "table": "users",
+                        "column": "user_role_id",
+                        "type": "number"
+                      },
+                      "operation": "="
+                    }
+                  ]
+                },
+                "primary": "id"
+              }
+            ],
+            "query": "SELECT users.*, company.*, user_role.*\nFROM users\nINNER JOIN company ON (company.companyid = users.company_id) INNER JOIN user_role ON (user_role.id = users.user_role_id)",
+            "params": []
+          },
+          "connection": "db"
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "first_name"
+          },
+          {
+            "type": "text",
+            "name": "last_name"
+          },
+          {
+            "type": "text",
+            "name": "gender"
+          },
+          {
+            "type": "text",
+            "sub": [],
+            "name": "email"
+          },
+          {
+            "type": "text",
+            "name": "avatar"
+          },
+          {
+            "type": "number",
+            "name": "user_role_id"
+          },
+          {
+            "type": "number",
+            "name": "company_id"
+          },
+          {
+            "type": "number",
+            "name": "companyid"
+          },
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "role_name"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "query1",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "sql": {
+            "type": "SELECT",
+            "columns": [],
+            "table": {
+              "name": "company"
+            },
+            "primary": "companyid",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "company.companyid",
+                  "field": "company.companyid",
+                  "type": "double",
+                  "operator": "equal",
+                  "value": "{{query[0].id}}",
+                  "data": {
+                    "table": "company",
+                    "column": "companyid",
+                    "type": "number",
+                    "columnObj": {
+                      "type": "increments",
+                      "primary": true,
+                      "nullable": false,
+                      "name": "companyid"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT *\nFROM company\nWHERE companyid = :P1 /* {{query[0].id}} */",
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{query[0].id}}"
+              }
+            ]
+          },
+          "connection": "db"
+        },
+        "output": false,
+        "meta": [
+          {
+            "type": "number",
+            "name": "companyid"
+          },
+          {
+            "type": "text",
+            "name": "name"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "query2",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "user_role",
+                "column": "*"
+              }
+            ],
+            "table": {
+              "name": "user_role"
+            },
+            "primary": "id",
+            "joins": [],
+            "query": "SELECT *\nFROM user_role",
+            "params": []
+          },
+          "connection": "db"
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "role_name"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

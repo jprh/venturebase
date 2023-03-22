@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "object",
+        "name": "data",
+        "sub": [
+          {
+            "type": "object",
+            "ref": "stripe_checkout.session",
+            "name": "object"
+          }
+        ]
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "checkout_status",
+      "module": "core",
+      "action": "setvalue",
+      "options": {
+        "value": "Success"
+      },
+      "meta": [],
+      "output": true,
+      "outputType": "text"
+    }
+  }
+}

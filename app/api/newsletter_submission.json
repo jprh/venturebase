@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/partials/newsletter-subscription-banner.ejs",
+      "linkedForm": "formnewsletter"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:email": {
+              "param": "",
+              "message": "Por favor ingrese una dirección de correo válida"
+            }
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "datetime",
+        "name": "datetime"
+      },
+      {
+        "type": "text",
+        "fieldName": "pathname",
+        "name": "pathname"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_1",
+              "value": "{{$_POST.email}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "db",
+                    "table": "newsletter_submission-form",
+                    "column": "email"
+                  },
+                  "message": "Ya está registrado en nuestro boletín"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "newsletter_submission-form",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "table": "newsletter_submission-form",
+                "column": "datetime",
+                "type": "datetime",
+                "value": "{{$_POST.datetime}}"
+              },
+              {
+                "table": "newsletter_submission-form",
+                "column": "pathname",
+                "type": "text",
+                "value": "{{$_POST.pathname}}"
+              }
+            ],
+            "table": "newsletter_submission-form",
+            "returning": "id",
+            "query": "INSERT INTO \"newsletter_submission-form\"\n(email, datetime, pathname) VALUES (:P1 /* {{$_POST.email}} */, :P2 /* {{$_POST.datetime}} */, :P3 /* {{$_POST.pathname}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.datetime}}"
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.pathname}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "output": true
+      }
+    ]
+  }
+}

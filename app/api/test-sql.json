@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "sql": {
+            "type": "SELECT",
+            "columns": [],
+            "table": {
+              "name": "blog_posts"
+            },
+            "joins": [],
+            "query": "SELECT *\nFROM blog_posts",
+            "params": []
+          },
+          "connection": "db"
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "Banner img"
+          },
+          {
+            "type": "text",
+            "name": "Title"
+          },
+          {
+            "type": "text",
+            "name": "Author name"
+          },
+          {
+            "type": "date",
+            "name": "Publishing date"
+          },
+          {
+            "type": "text",
+            "name": "Copy body"
+          },
+          {
+            "type": "text",
+            "name": "Tags"
+          },
+          {
+            "type": "text",
+            "name": "Summary"
+          },
+          {
+            "type": "text",
+            "name": "slug"
+          },
+          {
+            "type": "boolean",
+            "name": "feat"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "repeat",
+        "module": "core",
+        "action": "repeat",
+        "options": {
+          "repeat": "{{query}}",
+          "outputFields": [],
+          "exec": {
+            "steps": {
+              "name": "vartag",
+              "module": "core",
+              "action": "setvalue",
+              "options": {
+                "key": "vartag",
+                "value": "{{Tags}}"
+              },
+              "meta": [],
+              "outputType": "text",
+              "output": true
+            }
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "$index",
+            "type": "number"
+          },
+          {
+            "name": "$number",
+            "type": "number"
+          },
+          {
+            "name": "$name",
+            "type": "text"
+          },
+          {
+            "name": "$value",
+            "type": "object"
+          },
+          {
+            "name": "id",
+            "type": "number"
+          },
+          {
+            "name": "Banner img",
+            "type": "text"
+          },
+          {
+            "name": "Title",
+            "type": "text"
+          },
+          {
+            "name": "Author name",
+            "type": "text"
+          },
+          {
+            "name": "Publishing date",
+            "type": "date"
+          },
+          {
+            "name": "Copy body",
+            "type": "text"
+          },
+          {
+            "name": "Tags",
+            "type": "text"
+          },
+          {
+            "name": "Summary",
+            "type": "text"
+          },
+          {
+            "name": "slug",
+            "type": "text"
+          },
+          {
+            "name": "feat",
+            "type": "boolean"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

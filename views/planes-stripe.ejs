@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" dmx-bind:value="'#navTabs1_2_tab'">
+
+<head>
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js"></script>
+
+    <link rel="stylesheet" href="/dmxAppConnect/dmxNotifications/dmxNotifications.css" />
+
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/dmxAppConnect/dmxNotifications/dmxNotifications.js" defer=""></script>
+
+    <link rel="stylesheet" href="/dmxAppConnect/dmxBootstrap5TableGenerator/dmxBootstrap5TableGenerator.css" />
+
+
+
+    <script src="/dmxAppConnect/dmxBootstrap5Offcanvas/dmxBootstrap5Offcanvas.js" defer=""></script>
+
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="/dmxAppConnect/dmxStripe/dmxStripe.js" defer=""></script>
+
+
+
+    <script src="/dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxAutocomplete/dmxAutocomplete.css" />
+    <script src="/dmxAppConnect/dmxAutocomplete/dmxAutocomplete.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Toasts/dmxBootstrap5Toasts.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Alert/dmxBootstrap5Alert.js" defer=""></script>
+    <meta name="ac:route" content="/planes">
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Planes - Venturebase</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-logo-vb.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-36x36-vb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-12x12-vb.png">
+    <link rel="manifest" href="https://solo/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pin-tab-vb.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:card" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:site" content="@venturebase">
+    <meta name="twitter:title" content="Venturebase">
+    <meta name="twitter:description" content="Ayudamos a comenzar empresas en USA">
+    <meta name="twitter:creator" content="@venturebase">
+    <meta name="twitter:image" content="https:/img/Logo.png">
+    <meta property="og:title" content="Venturebase">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="http://venturebase.us">
+    <meta property="og:image" content="https:/img/Logo.png">
+    <meta property="og:description" content="Ayudamos a comenzar empresas en USA">
+    <meta property="og:site_name" content="Venturebase">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" media="all" />
+
+    <!-- icons stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" integrity="sha384-NUDU7Qr8dfscXBIhA0px/bRl3cgNrOT9l/WPm15DzH5xnBs4fL4vgRiXURs98/ID" crossorigin="anonymous" media="all" />
+    <link rel="stylesheet" href="/dmxFramework7_icons/css/framework7-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/muse-dashboard/assets/css/theme.min.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="css/style.min.css" media="all" /> -->
+    <!-- <link rel="stylesheet" href="css/style.css" media="all" /> -->
+    <link rel="stylesheet" media="all" href="/css/app-solo.css">
+
+    <!-- scripts -->
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+            if (viewportmeta) {
+            if (screen.width < 375) {
+                var newScale = screen.width / 375;
+                viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+            } else {
+                viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+            }
+        }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGWHE7XRS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-ZLGWHE7XRS'{
+        'linker': {
+            'domains': [
+                'venturebase.spp.io',
+                'clients.venturebase.us'
+            ]
+        }
+      });    
+    </script>
+
+    <!-- segment script -->
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="JwDbsw1t3TAigxVxodiFcqEr53cwtO8b";;analytics.SNIPPET_VERSION="4.15.3";
+            analytics.load("JwDbsw1t3TAigxVxodiFcqEr53cwtO8b");
+            analytics.page();
+            }}();
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216721706-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-216721706-1');
+    </script>
+
+    <!-- Hotjar Tracking Code for http://venturebase.us/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2776939,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20041373.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-c4cc9b6b-31ef-45ef-9a1c-ae68c6e15806"></div>
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body is="dmx-app" id="indexstripe">
+    <dmx-datastore id="datastore1"></dmx-datastore>
+    <div class="offcanvas offcanvas-end border-start rounded-1 border-light" id="offcanvas1" is="dmx-bs5-offcanvas" tabindex="-1" scroll="true" style="width: 500px;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Carrito de Compras</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body style112" style="padding-bottom: 5rem;">
+            <div class="table-responsive">
+                <table class="table pb-xxl-5">
+                    <thead>
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Servicio</th>
+                            <th>Precio</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="datastore1.data" id="tableRepeat1" style="/* padding-bottom: 120px */">
+                        <tr>
+                            <td dmx-text="quantity" class="text-center"></td>
+                            <td dmx-text="product_name"></td>
+                            <td dmx-text="product_price.formatNumber(0, '.', ',')" class="text-center"></td>
+                            <td class="style102">
+                                <button id="btn3" class="btn-danger btn-sm me-1" dmx-on:click="datastore1.upsert({$id: $id},{quantity: `quantity-1`})" dmx-bind:disabled="quantity==1"><i class="fa fa-minus"></i>
+                                </button>
+                                <button id="btn4" class="btn-primary btn-sm me-1" dmx-on:click="datastore1.upsert({$id: $id},{quantity: `quantity+1`})"><i class="fa fa-plus"></i>
+                                </button>
+                                <button id="btn5" class="btn-sm btn-secondary" dmx-on:click="datastore1.delete({$id: $id})"><i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xxl-end">Monto Total: {{datastore1.data.sum(`product_price*quantity`).formatNumber(2,'.', ',')}}</p>
+            <div class="d-flex style109 bg-white pt-3 pb-4">
+                <button id="btn6" class="btn style104 mt-xxl-3 me-xxl-2 btn_border" dmx-on:click="offcanvas1.hide()">Continuar</button>
+                <button id="btn1" class="btn btn_orange style104 mt-xxl-3" dmx-on:click="stripeserverside.checkout()">Finalizar</button>
+            </div>
+        </div>
+    </div>
+    <dmx-notifications id="notifies1"></dmx-notifications>
+    <div is="dmx-bs5-toasts" id="toasts1"></div>
+
+    <%- await include('/partials/contact-modal', Object.assign({}, locals)) %>
+
+        <dmx-value id="foo" dmx-bind:value="'Conozca más'"></dmx-value>
+        <dmx-stripe id="stripeserverside" dmx-bind:line-items="datastore1.data" checkout="server" dmx-on:error="notifies1.danger('Error:'+stripeserverside.lastError)" session-url="/api/stripe_checkout" key="pk_live_51KHy1iIMdyLBI2IoSpcDtzNLjtu6CkA0XZ82tp2pCJ711VATVocIzEW6MRm7C48HbGIhcqJzMV4URYnMrohn4del00HfyBh8A0">
+
+        </dmx-stripe>
+        <dmx-stripe id="stripeclientside" key="pk_live_51KHy1iIMdyLBI2IoSpcDtzNLjtu6CkA0XZ82tp2pCJ711VATVocIzEW6MRm7C48HbGIhcqJzMV4URYnMrohn4del00HfyBh8A0" dmx-bind:line-items="datastore1.data" success-url="/exito-pago" cancel-url="/planes"></dmx-stripe>
+        <div is="dmx-browser" id="browser1"></div>
+        <dmx-serverconnect id="faqs" url="api/query-faq-db" dmx-param:slug="browser1.location.pathname"></dmx-serverconnect>
+        <dmx-data-view id="data_view1" dmx-bind:data="faqs.data.query"></dmx-data-view>
+
+        <script>
+            console.log(localStorage.getItem('darkMode'));
+            if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+        </script>
+        <div class="page container-fluid">
+            <%- await include('/partials/navbar', Object.assign({}, locals)) %>
+                <div class="pricing">
+                    <div class="about pricing__center center">
+                        <h1 class="pricing__title d1" data-aos="animation-scale-top" data-aos-duration="600">¡Comience hoy!</h1>
+                        <div class="pricing__info">Elija el plan que más se adapte a las necesidades de su negocio</div>
+
+                    </div>
+                </div>
+
+                <div class="center container-fluid text-start" style="margin-bottom: 104px;">
+                    <ul class="nav nav-tabs questions__nav justify-content-center flex-column flex-md-row" id="navTabs1_tabs" role="tablist" style="border-bottom: 0px;">
+                        <li class="nav-item questions__link" style="/* margin-right: 0px */">
+                            <a class="questions__link active pt-2 pb-2" id="navTabs1_1_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true">Registro Empresa</a>
+                        </li>
+                        <li class="nav-item questions__link">
+                            <a class="questions__link pt-2 pb-2" id="navTabs1_2_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Cuenta Bancaria Jurídica</a>
+                        </li>
+                        <li class="nav-item questions__link">
+                            <a class="questions__link pt-2 pb-2" id="navTabs1_2_tab1" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_3" role="tab" aria-controls="navTabs1_2" aria-selected="false">Cuenta Bancaria Personal</a>
+                        </li>
+                        <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2 active_solo" id="navTabs1_3_tab1" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_4" role="tab" aria-controls="navTabs1_3" aria-selected="false">Otros Servicios</a></li>
+                        <li class="nav-item questions__link"></li>
+                    </ul>
+                    <div class="tab-content" id="navTabs1_content">
+                        <div class="tab-pane fade show active" id="navTabs1_1" role="tabpanel">
+                            <div class="pricing__list">
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Empresa Básico</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">99</span><span class="pricing__time">+ tasas estatales</span></div>
+                                        <div class="pricing__text">Ideal para comenzar su empresa en USA</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 1},{price: \'price_1KUHzbIMdyLBI2IoA9tjFl2R\', quatity: \`quatity + 1\`, product_id: 1, product_name: \'Empresa Basico\', product_price: 99, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__stage">Incluye</div>
+                                        <div class="pricing__category">Empresa Basico</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Búsqueda de disponibilidad de nombre</li>
+                                            <li>Registro de empresa</li>
+                                            <li>Entrega digital de documentos de registro</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__note">Opción popular</div>
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">Empresa Premium</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">499</span><span class="pricing__time"></span></div>
+                                        <div class="pricing__text">Para quien necesita una estructura más robusta</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 2},{price: \'price_1KUIBAIMdyLBI2Iok5sXr0Mv\', quatity: \`quatity + 1\`, product_id: 2, product_name: \'Empresa Premium\', product_price: 499, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__category">Empresa Premium</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Todo lo incluido en el plan básico</li>
+                                            <li>1 año de servicio de agente registrado</li>
+                                            <li>Tasas de registro</li>
+                                            <li>Artículos de organización</li>
+                                            <li>Certificado de emisión de acciones</li>
+                                            <li>Dirección (POX)</li>
+                                            <li>Número telefónico en USA - con la posibilidad de desviar las llamadas a su teléfono local</li>
+                                            <li>Cientos de dólares en descuentos y beneficios</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="600">Empresa + Neo Banco</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">975</span><span class="pricing__time"></span></div>
+                                        <div class="pricing__text">Establezca su empresa y maneje pagos en US$</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id:3},{price: \'price_1KUIBWIMdyLBI2IojwDR1hVj\', quatity: \`quatity + 1\`, product_id:3, product_name: \'Empresa + Neo Banco\', product_price: 975, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__category">Empresa + Neo Banco</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Todo lo incluido en el plan empresa premium</li>
+                                            <li>Presentación y preparación para gestión de cuenta bancaria en línea <br><span class="style44">Solo Introducción, sin necesidad de viajar a Estados Unidos</span></li>
+                                            <li>Pagina Web <br><span class="style44">1 página, hasta mil palabras, 1 llamado de acción, diseño de UX - no incluye redacción de texto ni licencia de imágenes. Hosting y dominio no incluidos)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="navTabs1_2" role="tabpanel">
+                            <div class="pricing__list">
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Neobancos Básico</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">599</span><span class="pricing__time"></span></div>
+                                        <div class="pricing__text">Para quienes necesitan una cuenta en línea y ya tienen empresa</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 4},{price: \'price_1KUIBsIMdyLBI2IoktM5dddA\', quatity: \`quatity + 1\`, product_id: 4, product_name: \'Neobancos Básico\', product_price: 599, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__stage">Incluye</div>
+                                        <div class="pricing__category">Neobancos Básico</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Asesoría Neobancos</li>
+                                            <li>Metodología de 6 Factores</li>
+                                            <li>Presentación y preparación para gestión de cuenta bancaria en línea <br><span class="style44">Solo Introducción, sin necesaidad de viajar a Estados Unidos</span></li>
+                                            <li>Pagina Web <br><span class="style44">1 página, hasta mil palabras, 1 llamado de acción, diseño de UX - no incluye redacción de texto ni licencia de imágenes. Hosting y dominio no incluidos)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__note">Opción popular</div>
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">Neobanco Premium</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">975</span><span class="pricing__time"></span></div>
+                                        <div class="pricing__text">Para quienes necesitan una cuenta en línea y aún no tienen empresa</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 5},{price: \'price_1KUICGIMdyLBI2IoxBJL8qAz\', quatity: \`quatity + 1\`, product_id: 5, product_name: \'Neobancos Premium\', product_price: 975, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__category">Neobancos Premium</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Todo lo incluido en el plan básico</li>
+                                            <li>Búsqueda de disponibilidad de nombre</li>
+                                            <li>Registro de empresa</li>
+                                            <li>Tasas de registro</li>
+                                            <li>1 año de servicio de agente registrado</li>
+                                            <li>Entrega digital de documentos de registro</li>
+                                            <li>Artículos de organización</li>
+                                            <li>Certificado de emisión de acciones</li>
+                                            <li>Dirección (POX)</li>
+                                            <li>Número telefónico en USA <br><span class="style44"> con la posibilidad de desviar las llamadas a su teléfono local</span></li>
+                                            <li>Soporte vía chat</li>
+                                            <li>Cientos de dólares en descuentos y beneficios</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pricing__item">
+                                    <div class="pricing__head">
+                                        <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="600">Bancos Premium</div>
+                                        <div class="pricing__price"><span class="pricing__currency">$</span><span class="pricing__number">2,499</span><span class="pricing__time"></span></div>
+                                        <div class="pricing__text">Para quienes necesitan una cuenta en un banco tradicional en USA</div><button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 6},{price: \'price_1KUICVIMdyLBI2IokQq9MXni\', quatity: \`quatity + 1\`, product_id: 6, product_name: \'Bancos Premium\', product_price: 2499, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])"><span class="btn__text">Agregar al carrito</span></button>
+                                    </div>
+                                    <div class="pricing__details">
+                                        <div class="pricing__category">Bancos Premium</div><a class="pricing__view" href="#">See features<svg class="icon icon-arrow-down">
+                                                <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                                            </svg></a>
+                                        <ul class="pricing__options">
+                                            <li>Gestión de cuenta bancaria (con Zelle) en US$ en Estados Unidos </li>
+                                            <li>Búsqueda de disponibilidad de nombre</li>
+                                            <li>Registro de empresa</li>
+                                            <li>Tasas de registro</li>
+                                            <li>1 año de servicio de agente registrado</li>
+                                            <li>Entrega digital de documentos de registro</li>
+                                            <li>Artículos de organización</li>
+                                            <li>Certificado de emisión de acciones</li>
+                                            <li>Dirección (POX)</li>
+                                            <li>Número telefónico en USA <br><span class="style44"> con la posibilidad de desviar las llamadas a su teléfono local</span></li>
+                                            <li>Soporte vía chat</li>
+                                            <li>Cientos de dólares en descuentos y beneficios</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="navTabs1_4" role="tabpanel">
+                            <div class="pricing__list d-flex flex-xxl-column flex-column flex-md-column">
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">EIN</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Si ya cuenta con una empresa en estados Unidos pero aún no tiene un número de identificación fiscal y laboral.</p>
+                                                    <!-- <ul class="pricing__options">
+                                                        <li>10 Boards per Team</li>
+                                                        <li>Unlimited Lists</li>
+                                                        <li>10MB per File Attachment</li>
+                                                    </ul> -->
+
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal container-fluid style50 mb-4">
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">99</span></div>
+                                                <p class="pricing__text style34 text-xl-start">No incluye tasas estatales</p>
+                                                <button class="pricing__btn btn btn_orange order-1" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 7},{price: \'price_1KUICpIMdyLBI2IoBpLqAWgv\', quatity: \`quatity + 1\`, product_id: 7, product_name: \'EIN\', product_price: 99, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Quien ya cuenta con una empresa</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Aún no ha tramitado un TAX ID</li>
+                                                <li class="li__pricincing_horizontal">Hace transacciones en US$ </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Identidad de Marca</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Incluye</p>
+                                                    <ul class="pricing__options">
+                                                        <li>Logo</li>
+                                                        <li>Paleta de colores</li>
+                                                        <li>Guia de estilo</li>
+                                                        <li>Formatos: Membrete personalizado, tarjeta de presentación, formato legal de facturación</li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal container-fluid style50 mb-4">
+                                                <p class="pricing__text style49">A partir de</p>
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">2,499</span></div>
+                                                <p class="pricing__text style34 text-xl-start" dmx-on:click="">Para paquetes adaptables a la necedad de su negocio <a href="" dmx-on:click.prevent="modal1.show()">Contáctenos</a></p>
+                                                <button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 8},{price: \'price_1KUIE2IMdyLBI2IoxBKxJo3B\', quatity: \`quatity + 1\`, product_id: 8, product_name: \'Identidad de Marca\', product_price: 2499, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Empresas sin una identidad empresarial</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Empresas que quieran destacar en el mercado</li>
+                                                <li class="li__pricincing_horizontal">Empresas que necesitan adaptar su imagen al mercado internacional</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Diseño de Página Web - Microsite</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Incluye</p>
+
+                                                    <ul class="pricing__options">
+                                                        <li>1 página</li>
+                                                        <li>Hasta mil palabra</li>
+                                                        <li>Un llamado de acción</li>
+                                                        <li>Diseño de UI</li>
+                                                    </ul>
+
+                                                    <p class="pricing__text style49 mt-lg-4 mt-xxl-4 mb-xxl-0">No Incluye redacción de texto, licencia de imágenes, programación, hospedaje web, ni dominio.</p>
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal style50 mb-4 d-flex justify-content-xxl-start flex-column">
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">799</span>
+                                                </div>
+                                                <p class="pricing__text style34 text-xl-start" dmx-on:click="">
+                                                    Precio base. Para paquetes adaptables a la necedad de su negocio <a href="" target="_blank" dmx-on:click.prevent="modal1.show()">Contáctenos</a></p>
+                                                <button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 9},{price: \'price_1KUIEVIMdyLBI2Io7pcCRkD9\', quatity: \`quatity + 1\`, product_id: 9, product_name: \'Diseño de Página Web - Microsite\', product_price: 799, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Emprendedores y pequeñas empresas</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Empresas sin una presencia en línea</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Diseño de Página Web </div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Incluye</p>
+
+                                                    <ul class="pricing__options">
+                                                        <li>3 - 5 páginas</li>
+                                                        <li>Hasta dos mil palabras</li>
+                                                        <li>Dos llamado de acción</li>
+                                                        <li>Diseño UI y prototipo de UX</li>
+                                                    </ul>
+
+                                                    <p class="pricing__text style49 mt-lg-4 mt-xxl-4 mb-xxl-0">No Incluye redacción de texto, licencia de imágenes, programación, hospedaje web, ni dominio.</p>
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal style50 mb-4 d-flex justify-content-xxl-start flex-column">
+                                                <p class="pricing__text style49">A partir de</p>
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">1,999</span>
+                                                </div>
+                                                <p class="pricing__text style34 text-xl-start" dmx-on:click="">Para paquetes adaptables a la necesidad de su negocio <a href="" target="_blank" dmx-on:click.prevent="modal1.show()">Contáctenos</a></p>
+                                                <button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 10},{price: \'price_1KUIExIMdyLBI2IopXxvBOAe\', quatity: \`quatity + 1\`, product_id: 10, product_name: \'Diseño de Página Web\', product_price: 1999, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Pequeñas y medianas empresas</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Empresas que deseen expandir su presencia en línea.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Diseño de Presentación Corporativa</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Incluye</p>
+
+                                                    <ul class="pricing__options">
+                                                        <li>Hasta 10 diapositivas</li>
+                                                        <li>5 estilos de diseño de diapositiva</li>
+                                                        <li>Hasta 400 palabras</li>
+                                                        <li>5 imágenes originales</li>
+                                                        <li>2 revisiones&nbsp;</li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal style50 mb-4 d-flex justify-content-xxl-start flex-column">
+                                                <p class="pricing__text style49">A partir de</p>
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">2,999</span>
+                                                </div>
+                                                <p class="pricing__text style34 text-xl-start" dmx-on:click="">Para paquetes adaptables a la necedad de su negocio <a href="" dmx-on:click.prevent="modal1.show()">Contáctenos</a></p>
+                                                <button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 11},{price: \'price_1KUIG0IMdyLBI2Io1RwsUgSM\', quatity: \`quatity + 1\`, product_id: 11, product_name: \'Diseño de Presentación Corporativa\', product_price: 1999, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para empresarios y emprendedores que deseen utilizar la presentación para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Levantamiento de fondos&nbsp;</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Ventas y mercadeo</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Entrenamiento y capacitación</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Presentación de resultados</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="navTabs1_3" role="tabpanel">
+                            <div class="pricing__list d-flex flex-xxl-column flex-column flex-md-column">
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Cuenta Bancaria Personal</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Características</p>
+                                                    <ul class="pricing__options">
+                                                        <li>Cuenta Corriente</li>
+                                                        <li>Acceso a la plataforma de Zelle</li>
+                                                        <li>Acceso a tarjeta de débito</li>
+                                                    </ul>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal container-fluid style50 mb-4">
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">1,990</span></div>
+                                                <p class="pricing__text style34 text-xl-start text-xxl-justify">No incluye el depósito mínimo de apertura</p>
+                                                <button class="pricing__btn btn btn_orange order-1" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 12},{price: \'price_1KdUewIMdyLBI2IoKcTIhV2k\', quantity: \`quantity+1\`, product_id: 12, product_name: \'Cuenta Bancaria Personal\', product_price: 1990})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Quien necesita hacer o recibir pagos en $</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Hacer y recibir pagos via Zelle</li>
+                                                <li class="li__pricincing_horizontal">Contar con una tarjeta de débito para transacciones internacionales</li>
+                                                <li class="li__pricincing_horizontal">Ahorrar en dólares y tener el dinero protegido</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- 
+                                <div class="pricing__group__horizontal pricing__item">
+                                    <div class=" d-flex pricing__group__horizontal flex-md-column" style="/* border-bottom: 0px */">
+
+                                        <div class="d-flex flex-column flex-md-row ">
+                                            <div class="pricing__head__horizontal container-fluid w-100 style57 mb-4">
+                                                <div class="pricing__subtitle" data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">Diseño de Presentación Corporativa</div>
+                                                <div class="style38">
+                                                    <p class="pricing__text style49">Incluye</p>
+
+                                                    <ul class="pricing__options">
+                                                        <li>Hasta 10 diapositivas</li>
+                                                        <li>5 estilos de diseño de diapositiva</li>
+                                                        <li>Hasta 400 palabras</li>
+                                                        <li>5 imágenes originales</li>
+                                                        <li>2 revisiones&nbsp;</li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="pricing__head__horizontal style50 mb-4 d-flex justify-content-xxl-start flex-column">
+                                                <p class="pricing__text style49">A partir de</p>
+                                                <div class="pricing__price d-flex style51 align-items-xl-center"><span class="pricing__currency">$</span><span class="pricing__number style52">2,999</span>
+                                                </div>
+                                                <p class="pricing__text style34 text-xl-start" dmx-on:click="">Para paquetes adaptables a la necedad de su negocio <a href="" dmx-on:click.prevent="modal1.show()">Contáctenos</a></p>
+                                                <button class="pricing__btn btn btn_orange" dmx-on:click="run([{run:{action:`datastore1.upsert({product_id: 11},{price: \'price_1KUIG0IMdyLBI2Io1RwsUgSM\', quatity: \`quatity + 1\`, product_id: 11, product_name: \'Diseño de Presentación Corporativa\', product_price: 1999, quantity: \`quantity + 1\`})`}},{run:{action:`offcanvas1.toggle()`}}])">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                        <div class="pricing__head__horizontal container-fluid style56">
+                                            <p class="pricing__text style49">Ideal para empresarios y emprendedores que deseen utilizar la presentación para:&nbsp;</p>
+                                            <ul class="pricing__options  pricing__include__group ">
+                                                <li style="/* width: 80% */" class="li__pricincing_horizontal">Levantamiento de fondos&nbsp;</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Ventas y mercadeo</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Entrenamiento y capacitación</li>
+                                                <li style="width: ;" class="li__pricincing_horizontal">Presentación de resultados</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+                                </div> -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <%- await include('/partials/footer', Object.assign({}, locals)) %>
+        </div>
+
+
+        <!-- scripts-->
+        <script src="/js/bundle.js" defer="true"></script>
+        <script src="/js/svg4everybody.min.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/js/aos.js"></script>
+        <script src="/muse-dashboard/assets/js/theme-custom.js"></script>
+        <script src="/js/app-solo.js"></script>
+        <!-- <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a8cd5af65a51902998e08595-|49" defer=""></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Using App Connect Expressions in JavaScript Functions https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+        <script>
+            function myFunction(){
+                            var myVar = dmx.parse("var2.value");
+                            console.log(myVar);
+                        }
+        </script>
+
+        <!--Accessing JavaScript Variables Values with App Connect  https://docs.wappler.io/t/using-app-connect-with-javascript-functions/15765-->
+        <script>
+            function myFunction2() {
+                            var car = {type:"Fiat", model:"500", color:"blue&yellow"};
+                            dmx.app.set('car', car);
+                         }		
+        </script>
+
+        <script>
+            $(function() {
+                    var hash = dmx.parse('browser1.location.hash');
+                    $(hash).tab('show');
+                });
+        </script>
+</body>
+
+</html>

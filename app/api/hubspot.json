@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/partials/contact-modal.ejs",
+      "linkedForm": "serverconnectform1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "name",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "name"
+      },
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:email": {
+              "message": "Ingrese un correo electrónico válido"
+            }
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "objetivo",
+        "name": "objetivo"
+      },
+      {
+        "type": "text",
+        "fieldName": "requerimiento",
+        "options": {
+          "rules": {
+            "core:maxlength": {
+              "param": "400",
+              "message": "Por favor ingrese un máximo de 400 caracteres."
+            }
+          }
+        },
+        "name": "requerimiento"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "apihubspot",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "url": "https://api.hubapi.com/crm/v3/objects/contacts?hapikey=868ca143-ad5b-400d-9d92-8501856f8a80",
+        "method": "POST",
+        "dataType": "json",
+        "data": {
+          "properties": {
+            "company": "",
+            "email": "{{$_POST.email}}",
+            "firstname": "{{$_POST.name}}",
+            "lastname": "{{$_POST.name}}",
+            "phone": "",
+            "website": "from venturebase.us"
+          }
+        },
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "output": true
+    }
+  }
+}

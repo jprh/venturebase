@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db 2",
+        "sql": {
+          "type": "SELECT",
+          "columns": [],
+          "params": [],
+          "table": {
+            "name": "cars"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "SELECT *\nFROM cars"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "make"
+        },
+        {
+          "type": "text",
+          "name": "model"
+        },
+        {
+          "type": "text",
+          "name": "year"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

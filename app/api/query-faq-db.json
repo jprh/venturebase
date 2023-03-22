@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "name": "slug"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "array",
+        "name": "questions-queried"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "",
+      "module": "core",
+      "action": "condition",
+      "options": {
+        "if": "{{$_GET.slug == '/faq'}}",
+        "then": {
+          "steps": [
+            {
+              "name": "faqfull",
+              "module": "dbconnector",
+              "action": "select",
+              "options": {
+                "sql": {
+                  "type": "SELECT",
+                  "columns": [],
+                  "table": {
+                    "name": "faqs"
+                  },
+                  "joins": [],
+                  "query": "SELECT *\nFROM faqs",
+                  "params": []
+                },
+                "connection": "db"
+              },
+              "meta": [
+                {
+                  "type": "number",
+                  "name": "id"
+                },
+                {
+                  "type": "text",
+                  "name": "question"
+                },
+                {
+                  "type": "text",
+                  "name": "answer"
+                },
+                {
+                  "type": "text",
+                  "name": "tag"
+                }
+              ],
+              "outputType": "array"
+            },
+            {
+              "name": "faqobject",
+              "module": "core",
+              "action": "setvalue",
+              "options": {
+                "key": "faqobject",
+                "value": "{{faqfull}}"
+              },
+              "meta": [
+                {
+                  "name": "id",
+                  "type": "number"
+                },
+                {
+                  "name": "question",
+                  "type": "text"
+                },
+                {
+                  "name": "answer",
+                  "type": "text"
+                },
+                {
+                  "name": "tag",
+                  "type": "text"
+                }
+              ],
+              "outputType": "array",
+              "output": true
+            }
+          ]
+        },
+        "else": {
+          "steps": [
+            {
+              "name": "faqfiltered",
+              "module": "dbconnector",
+              "action": "select",
+              "options": {
+                "sql": {
+                  "type": "SELECT",
+                  "columns": [],
+                  "table": {
+                    "name": "faqs"
+                  },
+                  "joins": [],
+                  "query": "SELECT *\nFROM faqs\nWHERE tag = :P1 /* {{$_GET.slug}} */",
+                  "params": [
+                    {
+                      "operator": "equal",
+                      "type": "expression",
+                      "name": ":P1",
+                      "value": "{{$_GET.slug}}"
+                    }
+                  ],
+                  "wheres": {
+                    "condition": "AND",
+                    "rules": [
+                      {
+                        "id": "faqs.tag",
+                        "field": "faqs.tag",
+                        "type": "string",
+                        "operator": "equal",
+                        "value": "{{$_GET.slug}}",
+                        "data": {
+                          "table": "faqs",
+                          "column": "tag",
+                          "type": "text"
+                        },
+                        "operation": "="
+                      }
+                    ],
+                    "conditional": null,
+                    "valid": true
+                  }
+                },
+                "connection": "db"
+              },
+              "meta": [
+                {
+                  "type": "number",
+                  "name": "id"
+                },
+                {
+                  "type": "text",
+                  "name": "question"
+                },
+                {
+                  "type": "text",
+                  "name": "answer"
+                },
+                {
+                  "type": "text",
+                  "name": "tag"
+                }
+              ],
+              "outputType": "array"
+            },
+            {
+              "name": "faqobject",
+              "module": "core",
+              "action": "setvalue",
+              "options": {
+                "key": "faqobject",
+                "value": "{{faqfiltered}}"
+              },
+              "meta": [
+                {
+                  "name": "id",
+                  "type": "number"
+                },
+                {
+                  "name": "question",
+                  "type": "text"
+                },
+                {
+                  "name": "answer",
+                  "type": "text"
+                },
+                {
+                  "name": "tag",
+                  "type": "text"
+                }
+              ],
+              "outputType": "array",
+              "output": true
+            }
+          ]
+        }
+      },
+      "outputType": "boolean"
+    }
+  }
+}

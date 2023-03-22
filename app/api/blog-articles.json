@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "name": "article"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "sql": {
+          "type": "SELECT",
+          "columns": [],
+          "table": {
+            "name": "blog_posts"
+          },
+          "joins": [],
+          "query": "SELECT *\nFROM blog_posts",
+          "params": []
+        },
+        "connection": "db"
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "Banner img"
+        },
+        {
+          "type": "text",
+          "name": "Title"
+        },
+        {
+          "type": "text",
+          "name": "Author name"
+        },
+        {
+          "type": "date",
+          "name": "Publishing date"
+        },
+        {
+          "type": "text",
+          "name": "Copy body"
+        },
+        {
+          "type": "text",
+          "name": "Tags"
+        },
+        {
+          "type": "text",
+          "name": "Summary"
+        },
+        {
+          "type": "text",
+          "name": "slug"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

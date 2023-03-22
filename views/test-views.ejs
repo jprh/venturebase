@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="ac:route" content="/test">
+    <base href="/">
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+
+    <link rel="stylesheet" media="all" href="/css/home%EF%B9%96869f1a72ca14e99ce6ed.css">
+    <link rel="stylesheet" media="all" href="/css/ap.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/ap.js" defer></script>
+    <script type="text/javascript" src="/js/home%EF%B9%96869f1a72ca14e99ce6ed.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/testpage.css" />
+    <script src="/dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/dmxAppConnect/dmxBootstrap5Offcanvas/dmxBootstrap5Offcanvas.js" defer=""></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxBootstrap5TableGenerator/dmxBootstrap5TableGenerator.css" />
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
+    <link rel="stylesheet" href="/dmxAppConnect/dmxAutocomplete/dmxAutocomplete.css" />
+    <script src="/dmxAppConnect/dmxAutocomplete/dmxAutocomplete.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="testviews">
+    <%- await include('/partials/promo-banner', Object.assign({}, locals)) %>
+    <dmx-serverconnect id="serverconnect4" url="/api/quey_users_role_test"></dmx-serverconnect>
+    <dmx-serverconnect id="serverconnect3" url="/api/test_custom_module"></dmx-serverconnect>
+    <dmx-serverconnect id="serverconnect2" url="/api/test_reference_query"></dmx-serverconnect>
+    <dmx-serverconnect id="serverconnectsimpl" url="/api/test_reference_query_simp"></dmx-serverconnect>
+    <div class="container wappler-block pt-5 pb-5">
+        <div class="row">
+            <form class="d-flex" action="/api/input_user_role_test" method="post" is="dmx-serverconnect-form" id="serverconnectform1" dmx-on:success="serverconnectform1.reset()">
+
+
+
+
+                <div class="form-group mb-3 col"><label for="input2" class="form-label" wappler-command="editContent">Name&nbsp; {{serverconnect4.data.query[0].first_name}}</label>
+                    <input type="text" class="form-control" id="input2" name="name" aria-describedby="input2_help" placeholder="name">
+                </div>
+                <div class="form-group mb-3 col"><label for="input4" class="form-label" wappler-command="editContent">Email {{serverconnect4.data.query[0].email}}</label>
+                    <input type="email" class="form-control" id="input4" name="email" aria-describedby="input2_help" placeholder="email">
+                </div>
+                <div class="form-group mb-3 col">
+                    <label for="input1" class="form-label">Company {{serverconnect4.data.query[0].name}}</label>
+                    <input type="text" class="form-control" id="input1" name="company" aria-describedby="input2_help" placeholder="company">
+                </div>
+                <div class="form-group mb-3 col">
+
+                    <label for="input3" class="form-label">Role {{serverconnect4.data.query[0].role_name}}</label>
+                    <select id="select1" class="form-select" dmx-bind:options="serverconnect4.data.query2" optiontext="role_name" optionvalue="id" name="role">
+                    </select>
+                </div>
+                <button id="btn1" class="btn btn-success align-self-end mb-3 shadow-sm" type="submit">Button</button>
+            </form>
+        </div>
+        <div class="row" is="dmx-repeat" id="repeat4" dmx-bind:repeat="serverconnect2.data.repeat">
+            <div class="col">
+
+
+                <h1 dmx-text="name">
+                    Fancy display heading</h1>
+                <div dmx-repeat:repeat6="query">
+                    <p dmx-text="title">Enter your content here</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-start col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Authorsid</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Blogid</th>
+                            <th>Blog post</th>
+                        </tr>
+                    </thead>
+                    <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect2.data.query1" id="tableRepeat2">
+                        <tr>
+                            <td dmx-text="authorsid"></td>
+                            <td dmx-text="name"></td>
+                            <td dmx-text="city"></td>
+                            <td dmx-text="blogid"></td>
+                            <td dmx-text="blog_post[0].title"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="repeat5" is="dmx-repeat"></div>
+                <h4>I love your writing about {{serverconnect2.data.query1[1].blog_post[0].title}} Mr. {{serverconnect2.data.query1[1].name}}<br><small class="text-muted">With faded secondary text</small></h4>
+                <p>A nice paragraph</p>
+                <button class="btn btn-primary">Button</button>
+            </div>
+            <h1 dmx-text="serverconnect3.data.JR">Ravelo</h1>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row" is="dmx-repeat" id="repeat7" dmx-bind:repeat="serverconnectsimpl.data.query1">
+            <div class="col">
+
+                <h1 dmx-text="name">Fancy display heading</h1>
+                <div dmx-repeat:repeat8="blog_post">
+                    <p dmx-text="title">Enter your content here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dmx-serverconnect id="serverconnectstripeproducts" url="/api/stripe-list-products"></dmx-serverconnect>
+    <dmx-serverconnect id="serverconnectapicustomerstripe" url="/api/stripe-list-customers"></dmx-serverconnect>
+    <dmx-datastore id="datastore1"></dmx-datastore>
+
+
+    <dmx-value id="vartag"></dmx-value>
+
+    <dmx-serverconnect id="serverconnect1" url="/api/test-sql"></dmx-serverconnect>
+
+    <div dmx-repeat:repeat1="serverconnect1.data.query">
+        <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+  run: {action: "{{arr1.add(Tags)}}", output: true}
+}</script>
+    </div>
+    <dmx-array id="arr1"></dmx-array>
+    <dmx-array id="arr2" dmx-bind:items="vartag.value.split(', ').unique()"></dmx-array>
+    <div>
+
+
+
+    </div>
+    <section>
+        <div class="row style112">
+            <div class="col style132">
+                <div class="card">
+                    <img class="card-img-top" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="style124 col-4">
+                <div class="card style133">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row style112">
+            <div class="col">
+                <div class="feature-row open-feature" data-feature-img="/assets/home-screen-inbox.png" data-feature-skin="inbox">
+                    <button>
+                        <h4>Todas tus conversaciones en un mismo lugar</h4>
+                        <div class="feature-icon">
+                            <i class="chevron-down"></i>
+                            <i class="chevron-up"></i>
+                        </div>
+                    </button>
+                    <div class="feature-text">
+                        <p>Responder a cada mensaje, comentario o reseña desde un solo lugar.
+                        </p>
+                        <div class="screenshot mobile-screenshot lozad sal-animate" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400" data-background-image="/assets/home-screen-inbox.png" data-loaded="true" style="background-image: url(&quot;/assets/home-screen-inbox.png&quot;);"></div>
+                        <a class="button hero-button" href="/features/social-media-inbox/" title="Todas tus conversaciones en un mismo lugar">Conoce más aquí</a>
+                    </div>
+                </div>
+                <div class="feature-row open-feature" data-feature-img="/assets/home-screen-inbox.png" data-feature-skin="inbox">
+                    <button>
+                        <h4>Todas tus conversaciones en un mismo lugar</h4>
+                        <div class="feature-icon">
+                            <i class="chevron-down"></i>
+                            <i class="chevron-up"></i>
+                        </div>
+                    </button>
+                    <div class="feature-text">
+                        <p>Responder a cada mensaje, comentario o reseña desde un solo lugar.
+                        </p>
+                        <div class="screenshot mobile-screenshot lozad sal-animate" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400" data-background-image="/assets/home-screen-inbox.png" data-loaded="true" style="background-image: url(&quot;/assets/home-screen-inbox.png&quot;);"></div>
+                        <a class="button hero-button" href="/features/social-media-inbox/" title="Todas tus conversaciones en un mismo lugar">Conoce más aquí</a>
+                    </div>
+                </div>
+                <div class="feature-row open-feature" data-feature-img="/assets/home-screen-inbox.png" data-feature-skin="inbox">
+                    <button>
+                        <h4>Todas tus conversaciones en un mismo lugar</h4>
+                        <div class="feature-icon">
+                            <i class="chevron-down"></i>
+                            <i class="chevron-up"></i>
+                        </div>
+                    </button>
+                    <div class="feature-text">
+                        <p>Responder a cada mensaje, comentario o reseña desde un solo lugar.
+                        </p>
+                        <div class="screenshot mobile-screenshot lozad sal-animate" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400" data-background-image="/assets/home-screen-inbox.png" data-loaded="true" style="background-image: url(&quot;/assets/home-screen-inbox.png&quot;);"></div>
+                        <a class="button hero-button" href="/features/social-media-inbox/" title="Todas tus conversaciones en un mismo lugar">Conoce más aquí</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col style111">
+                <div class="card style110">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+
+        </div>
+        <div class="container-test">
+            <h3 class="black-section-title sal-animate" data-sal="slide-up" data-sal-duration="600" data-sal-delay="5">Funciones: negocio, banco, empresa, asesoria ,llc, corps, empresa, negocio,negocios, empresa, mercado,registro, empresa, mercado&nbsp;<br><br>9 | negocio,banco,empresa,asesoria ,llc,corps,negocios,mercado,registro&nbsp;</h3>
+            <h1>Fancy display heading <br>negocio, banco, empresa, asesoria ,llc, corps, empresa, negocio,negocios, empresa, mercado,registro, empresa, mercado &amp; negocio,banco,empresa,asesoria ,llc,corps,negocios,mercado,registro&nbsp; &amp; negocio, banco, empresa, asesoria , llc, corps, empresa, negocio, negocios, empresa, mercado, registro, empresa, mercado</h1>
+            <div class="collapse" id="collapse1" is="dmx-bs5-collapse" dmx-repeat:repeat2="arr2.items">
+                <p dmx-text="items">Collapse body text goes here.</p>
+            </div>
+            <div class="module">
+                <div class="module-text">
+                    <div data-sal="slide-up" data-sal-duration="600" data-sal-delay="200" class="sal-animate">
+                        <div class="feature-row open-feature" data-feature-img="/assets/home-screen-inbox.png" data-feature-skin="inbox">
+                            <button>
+                                <h4>Todas tus conversaciones en un mismo lugar</h4>
+                                <div class="feature-icon">
+                                    <i class="chevron-down"></i>
+                                    <i class="chevron-up"></i>
+                                </div>
+                            </button>
+                            <div class="feature-text">
+                                <p>Responder a cada mensaje, comentario o reseña desde un solo lugar.
+                                </p>
+                                <div class="screenshot mobile-screenshot lozad sal-animate" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400" data-background-image="/assets/home-screen-inbox.png" data-loaded="true" style="background-image: url(&quot;/assets/home-screen-inbox.png&quot;);"></div>
+                                <a class="button hero-button" href="/features/social-media-inbox/" title="Todas tus conversaciones en un mismo lugar">Conoce más aquí</a>
+                            </div>
+                        </div>
+                        <div class="feature-row" data-feature-img="/assets/home-screen-publishing.png" data-feature-skin="publishing">
+                            <button>
+                                <h4>Publica fácilmente</h4>
+                                <div class="feature-icon">
+                                    <i class="chevron-down"></i>
+                                    <i class="chevron-up"></i>
+                                </div>
+                            </button>
+                            <div class="feature-text">
+                                <p>Planea, colabora y programa todo tu contenido para distintas redes sociales.
+                                </p>
+                                <div class="screenshot mobile-screenshot" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400"></div>
+                                <a class="button hero-button" href="/features/social-media-publishing/" title="Publica fácilmente">Conoce más aquí</a>
+                            </div>
+                        </div>
+                        <div class="feature-row" data-feature-img="/assets/home-screen-monitoring.png" data-feature-skin="monitoring">
+                            <button>
+                                <h4>Escucha social</h4>
+                                <div class="feature-icon">
+                                    <i class="chevron-down"></i>
+                                    <i class="chevron-up"></i>
+                                </div>
+                            </button>
+                            <div class="feature-text">
+                                <p>Descubre tendencias y comentarios acerca de tu marca - y de tus competidores.
+                                </p>
+                                <div class="screenshot mobile-screenshot" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400"></div>
+                                <a class="button hero-button" href="/features/social-media-monitoring/" title="Escucha social">Conoce más aquí</a>
+                            </div>
+                        </div>
+                        <div class="feature-row" data-feature-img="/assets/home-screen-reporting.png" data-feature-skin="reporting">
+                            <button>
+                                <h4>Informes avanzados</h4>
+                                <div class="feature-icon">
+                                    <i class="chevron-down"></i>
+                                    <i class="chevron-up"></i>
+                                </div>
+                            </button>
+                            <div class="feature-text">
+                                <p>Crea informes detallados que reflejen tu trabajo en redes sociales para entender mejor qué es lo que funciona - y lo que puede ser mejorado.
+                                </p>
+                                <div class="screenshot mobile-screenshot" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400"></div>
+                                <a class="button hero-button" href="/features/social-media-reporting/" title="Informes avanzados">Conoce más aquí</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-img">
+                    <div class="screenshot-container">
+                        <div class="screenshot lozad sal-animate" data-sal="slide-left" data-sal-once="false" data-sal-duration="600" data-sal-delay="400" data-background-image="/assets/home-screen-inbox.png" data-loaded="true" style="background-image: url(&quot;/assets/home-screen-inbox.png&quot;);"></div>
+                        <div class="bottom-accent lozad sal-animate" data-sal="zoom-in" data-sal-duration="300" data-sal-delay="700" data-background-image="/assets/home-inbox-buddy.png" data-loaded="true" style="background-image: url(&quot;/assets/home-inbox-buddy.png&quot;);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Object</th>
+                        <th>Address</th>
+                        <th>Balance</th>
+                        <th>Created</th>
+                        <th>Currency</th>
+                        <th>Default source</th>
+                        <th>Delinquent</th>
+                        <th>Description</th>
+                        <th>Discount</th>
+                        <th>Email</th>
+                        <th>Invoice prefix</th>
+                        <th>Invoice settings</th>
+                        <th>Livemode</th>
+                        <th>Metadata</th>
+                        <th>Name</th>
+                        <th>Next invoice sequence</th>
+                        <th>Phone</th>
+                        <th>Preferred locales</th>
+                        <th>Shipping</th>
+                        <th>Tax exempt</th>
+                    </tr>
+                </thead>
+                <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnectapicustomerstripe.data.api.data.data" id="tableRepeat1">
+                    <tr>
+                        <td dmx-text="id"></td>
+                        <td dmx-text="object"></td>
+                        <td dmx-text="address"></td>
+                        <td dmx-text="balance"></td>
+                        <td dmx-text="created"></td>
+                        <td dmx-text="currency"></td>
+                        <td dmx-text="default_source"></td>
+                        <td dmx-text="delinquent"></td>
+                        <td dmx-text="description"></td>
+                        <td dmx-text="discount"></td>
+                        <td dmx-text="email"></td>
+                        <td dmx-text="invoice_prefix"></td>
+                        <td dmx-text="invoice_settings"></td>
+                        <td dmx-text="livemode"></td>
+                        <td dmx-text="metadata"></td>
+                        <td dmx-text="name"></td>
+                        <td dmx-text="next_invoice_sequence"></td>
+                        <td dmx-text="phone"></td>
+                        <td dmx-text="preferred_locales"></td>
+                        <td dmx-text="shipping"></td>
+                        <td dmx-text="tax_exempt"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Object</th>
+                        <th>Active</th>
+                        <th>Attributes</th>
+                        <th>Created</th>
+                        <th>Description</th>
+                        <th>Images</th>
+                        <th>Livemode</th>
+                        <th>Metadata</th>
+                        <th>Name</th>
+                        <th>Package dimensions</th>
+                        <th>Shippable</th>
+                        <th>Statement descriptor</th>
+                        <th>Tax code</th>
+                        <th>Type</th>
+                        <th>Unit label</th>
+                        <th>Updated</th>
+                        <th>Url</th>
+                    </tr>
+                </thead>
+                <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnectstripeproducts.data.api.data.data" id="tableRepeat3">
+                    <tr>
+                        <td dmx-text="id"></td>
+                        <td dmx-text="object"></td>
+                        <td dmx-text="active"></td>
+                        <td dmx-text="attributes"></td>
+                        <td dmx-text="created"></td>
+                        <td dmx-text="description"></td>
+                        <td dmx-text="images"></td>
+                        <td dmx-text="livemode"></td>
+                        <td dmx-text="metadata"></td>
+                        <td dmx-text="name"></td>
+                        <td dmx-text="package_dimensions"></td>
+                        <td dmx-text="shippable"></td>
+                        <td dmx-text="statement_descriptor"></td>
+                        <td dmx-text="tax_code"></td>
+                        <td dmx-text="type"></td>
+                        <td dmx-text="unit_label"></td>
+                        <td dmx-text="updated"></td>
+                        <td dmx-text="url"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="row" dmx-repeat:repeat3="serverconnectstripeproducts.data">
+        <div class="col">
+            <h1 dmx-text="">Fancy display heading</h1>
+            <p>Enter your content here</p>
+        </div>
+
+    </div>
+    <div is="dmx-browser" id="browser1"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

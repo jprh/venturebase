@@ -1,0 +1,11 @@
+{
+  "debug": true,
+  "secret": "",
+  "cors": {
+    "origin": "*"
+  },
+  "stripe": {
+    "secretKey": "",
+    "endpointSecret": ""
+  }
+}

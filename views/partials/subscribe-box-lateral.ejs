@@ -1,0 +1,19 @@
+<!-- Wappler include head-page="blog-article" appConnect="local" is="dmx-app" bootstrap5="cdn" bootstrap_icons="cdn" fontawesome_4="cdn" framework7_icons="local" jquery_slim_35="cdn" -->
+<div class="bg-white rounded-12 py-4 py-md-5 px-4 mb-4 mb-md-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-4 d-flex flex-column style122">
+        <h4 class="mb-0">Unase a la lista de correos</h4>
+        <p class="text-gray-600 mb-md-3 lh-base mb-2">Información empresarial del mercado estadounidense directo en su correo</p>
+    </div>
+
+    <form id="form1" is="dmx-serverconnect-form" method="post" action="/api/newsletter_submission" dmx-on:invalid="" dmx-on:success="toasts1.show({message: 'Ya está en nuestra lista de contactos', title: 'Gracias por su interés'});form1.reset();email.disable()">
+        <div class="mb-3 px-md-2">
+            <input type="email" class="form-control form-control-lg mb-2" placeholder="Correo Electrónico" data-rule-email="" required="" data-msg-email="Por favor ingrese un correo electrónico válido" data-msg-required="Este campo es requerido" name="email">
+            <div class="text-center px-">
+                <button type="submit" class="btn btn-lg btn-block btn_orange mb-3">Subscríbase</button>
+                <small class="tiny text-gray-600 d-block style99">Al unirse a nuestra lista de correos acepta nuestros términos y política de privacidad<a href="#" class="text-gray-600"></a></small>
+            </div>
+        </div>
+    </form>
+
+
+</div>

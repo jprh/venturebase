@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query1",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "authors",
+              "column": "*"
+            }
+          ],
+          "table": {
+            "name": "authors"
+          },
+          "primary": "authorsid",
+          "joins": [],
+          "query": "SELECT *\nFROM authors",
+          "params": [],
+          "sub": {
+            "blog_post": {
+              "table": {
+                "name": "blog_post",
+                "alias": "blog_post"
+              },
+              "key": "authorid"
+            }
+          }
+        },
+        "connection": "db"
+      },
+      "meta": [
+        {
+          "type": "number",
+          "name": "authorsid"
+        },
+        {
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "type": "text",
+          "name": "city"
+        },
+        {
+          "type": "number",
+          "name": "blogid"
+        },
+        {
+          "name": "blog_post",
+          "type": "array",
+          "sub": [
+            {
+              "type": "number",
+              "name": "blogid"
+            },
+            {
+              "type": "text",
+              "name": "title"
+            },
+            {
+              "type": "number",
+              "name": "authorid"
+            }
+          ]
+        }
+      ],
+      "outputType": "array",
+      "output": true
+    }
+  }
+}

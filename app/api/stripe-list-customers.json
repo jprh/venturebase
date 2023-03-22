@@ -1,0 +1,216 @@
+{
+    "name": "api",
+    "module": "api",
+    "action": "send",
+    "options": {
+        "url": "https://api.stripe.com/v1/customers",
+        "headers": {
+            "authorization": ""
+        },
+        "schema": []
+    },
+    "output": true,
+    "meta": [{
+            "type": "object",
+            "name": "data",
+            "sub": [{
+                    "type": "text",
+                    "name": "object"
+                },
+                {
+                    "type": "array",
+                    "name": "data",
+                    "sub": [{
+                            "type": "text",
+                            "name": "id"
+                        },
+                        {
+                            "type": "text",
+                            "name": "object"
+                        },
+                        {
+                            "type": "object",
+                            "name": "address",
+                            "sub": [{
+                                    "type": "text",
+                                    "name": "city"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "country"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "line1"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "line2"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "postal_code"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "state"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "number",
+                            "name": "balance"
+                        },
+                        {
+                            "type": "number",
+                            "name": "created"
+                        },
+                        {
+                            "type": "text",
+                            "name": "currency"
+                        },
+                        {
+                            "type": "text",
+                            "name": "default_source"
+                        },
+                        {
+                            "type": "boolean",
+                            "name": "delinquent"
+                        },
+                        {
+                            "type": "text",
+                            "name": "description"
+                        },
+                        {
+                            "type": "text",
+                            "name": "discount"
+                        },
+                        {
+                            "type": "text",
+                            "name": "email"
+                        },
+                        {
+                            "type": "text",
+                            "name": "invoice_prefix"
+                        },
+                        {
+                            "type": "object",
+                            "name": "invoice_settings",
+                            "sub": [{
+                                    "type": "text",
+                                    "name": "custom_fields"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "default_payment_method"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "footer"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "boolean",
+                            "name": "livemode"
+                        },
+                        {
+                            "type": "object",
+                            "name": "metadata"
+                        },
+                        {
+                            "type": "text",
+                            "name": "name"
+                        },
+                        {
+                            "type": "number",
+                            "name": "next_invoice_sequence"
+                        },
+                        {
+                            "type": "text",
+                            "name": "phone"
+                        },
+                        {
+                            "type": "array",
+                            "name": "preferred_locales"
+                        },
+                        {
+                            "type": "text",
+                            "name": "shipping"
+                        },
+                        {
+                            "type": "text",
+                            "name": "tax_exempt"
+                        }
+                    ]
+                },
+                {
+                    "type": "boolean",
+                    "name": "has_more"
+                },
+                {
+                    "type": "text",
+                    "name": "url"
+                }
+            ]
+        },
+        {
+            "type": "object",
+            "name": "headers",
+            "sub": [{
+                    "type": "text",
+                    "name": "access-control-allow-credentials"
+                },
+                {
+                    "type": "text",
+                    "name": "access-control-allow-methods"
+                },
+                {
+                    "type": "text",
+                    "name": "access-control-allow-origin"
+                },
+                {
+                    "type": "text",
+                    "name": "access-control-expose-headers"
+                },
+                {
+                    "type": "text",
+                    "name": "access-control-max-age"
+                },
+                {
+                    "type": "text",
+                    "name": "cache-control"
+                },
+                {
+                    "type": "text",
+                    "name": "content-length"
+                },
+                {
+                    "type": "text",
+                    "name": "content-type"
+                },
+                {
+                    "type": "text",
+                    "name": "date"
+                },
+                {
+                    "type": "text",
+                    "name": "request-id"
+                },
+                {
+                    "type": "text",
+                    "name": "server"
+                },
+                {
+                    "type": "text",
+                    "name": "strict-transport-security"
+                },
+                {
+                    "type": "text",
+                    "name": "stripe-version"
+                }
+            ]
+        }
+    ],
+    "outputType": "object"
+}

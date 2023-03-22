@@ -1,0 +1,71 @@
+<!-- Wappler include appconnect="local" is="dmx-app" bootstrap5="cdn" components="{dmxStateManagement:{},dmxFormatter:{},dmxBrowser:{},dmxBootstrap5Modal:{}}" id="navbar" -->
+
+<div is="dmx-browser" id="browser1">
+    <link rel="stylesheet" href="/css/style.css" />
+</div>
+
+<header dmx-class:bg-light="browser1.scrollY.position" class="header navbar-expand navbar-dark fixed-top">
+    <nav class="header__center center style102">
+        <a class="header__logo" href="/">
+            <img class="header__pic header__pic_dark" src="/img/Logo.png" alt="" /><img class="header__pic header__pic_light visually-hidden" src="/img/logo-light.png" alt="" />
+        </a>
+        <div class="header__wrapper d-flex align-items-xxl-center flex-xxl-row justify-content-xxl-end flex-xl-row justify-content-xl-end scroll-mobile-menu">
+
+            <nav class="header__nav style88">
+
+                <div class="dropdown d-none d-xl-block">
+                    <button id="dropdown1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="header__link dropdown-toggle">Servicios</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown1">
+                        <a class="dropdown-item" href="/registro-empresa" dmx-class:active="browser1.location.pathname == '/registro-empresa'">Registro de Empresa</a>
+                        <a class="dropdown-item" href="/cuenta-bancaria" dmx-class:active="browser1.location.pathname == '/cuenta-bancaria'">Cuenta Bancaria Jurídica</a>
+                        <a class="dropdown-item" href="/cuenta-bancaria-personal" dmx-class:active="browser1.location.pathname == '/cuenta-bancaria-personal'">Cuenta Bancaria Personal</a>
+                        <a class="dropdown-item" href="/ein" dmx-class:active="browser1.location.pathname == '/ein'">Solicitud de EIN</a>
+                    </div>
+                </div>
+                <a class="header__link d-xl-none" href="/registro-empresa" dmx-class:active="browser1.location.pathname == '/registro-empresa'">Registro de Empresa</a>
+                <a class="header__link d-xl-none" href="/cuenta-bancaria" dmx-class:active="browser1.location.pathname == '/cuenta-bancaria'">Cuenta Bancaria Jurídica</a>
+                <a class="header__link d-xl-none" href="/cuenta-bancaria-personal" dmx-class:active="browser1.location.pathname=='/cuenta-bancaria-personal'">Cuenta Bancaria Personal</a>
+                <a class="header__link d-xl-none" href="/ein" dmx-class:active="browser1.location.pathname == '/ein'">Solicitud de EIN</a>
+                <a class="header__link" href="planes" dmx-class:active="browser1.location.pathname == '/planes'">Planes</a>
+                <a class="header__link  d-xl-none" href="faq" dmx-class:active="browser1.location.pathname == '/faq'">Preguntas Frecuentes</a>
+                <a class="header__link  d-xl-none" href="blog" dmx-class:active="browser1.location.pathname == '/blog'">Blog</a>
+                <a class="header__link" href="nosotros" dmx-class:active="browser1.location.pathname == '/nosotros'">Nosotros</a>
+                <div class="dropdown d-none d-xl-block">
+                    <button id="dropdownfaq" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="header__link dropdown-toggle">Recursos</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownfaq">
+                        <a class="dropdown-item" href="/faq" dmx-class:active="browser1.location.pathname == '/faq'">Preguntas Frecuentes</a>
+                        <a class="dropdown-item" href="/blog" dmx-class:active="browser1.location.pathname == '/blog'">Blog</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header__btns d-flex justify-content-between mb-2">
+                <a class="btn btn_transparent js-popup-open flex-grow-1 d-xl-none" data-bs-toggle="modal" data-bs-target="#modal1" data-effect="mfp-zoom-in">Escribanos</a>
+                <a class="btn btn_transparent flex-grow-1 d-xl-none" data-effect="mfp-zoom-in" href="/agendar-reunion">Hablemos</a>
+
+            </div>
+            <div class="header__btns d-flex">
+                <div class="dropdown d-none d-xl-block align-self-xl-center">
+                    <button id="dropdown2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="header__link dropdown-toggle">Contacto</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown2">
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal1" data-effect="mfp-zoom-in" style="cursor: pointer;">Solicitar Información</a>
+                        <a class="dropdown-item" href="/agendar-reunion">Hablar con ventas</a>
+                        <a class="dropdown-item d-md-none" href="https://api.whatsapp.com/send?phone=17866024069">Chat directo</a>
+                    </div>
+                </div>
+                <button class="header__btn btn btn_orange flex-grow-1 ms-0 me-0" data-effect="mfp-zoom-in" dmx-on:click="browser1.goto('/planes')">Comience Ahora</button>
+
+            </div>
+
+            <picture class="header__preview">
+                <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" />
+                <img srcset="img/header-pic@2x.png 2x" src="/img/header-pic.png" alt="" class="visually-hidden" />
+            </picture>
+        </div>
+        <button class="header__burger"></button>
+
+    </nav>
+
+
+
+</header>

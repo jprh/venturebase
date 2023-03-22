@@ -1,0 +1,39 @@
+<!-- Wappler include appConnect="local" is="dmx-app" bootstrap5="cdn" bootstrap_icons="cdn" fontawesome_4="cdn" framework7_icons="local" jquery_slim_35="cdn" components="{dmxBootstrap5Modal:{},dmxBootbox:{},dmxBootstrap5Toasts:{},dmxBootstrap4Toasts:{},dmxBrowser:{}}" -->
+<div is="dmx-browser" id="browser1"></div>
+<dmx-datetime id="var1"></dmx-datetime>
+
+<div is="dmx-bs5-toasts" id="toasts1"></div>
+<div class="modal" id="modal1" is="dmx-bs5-modal" tabindex="-1" data-effect="mfp-zoom-in">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content style43">
+
+            <h5 class="popup__title h2 text-light" style="margin-bottom: 20px;">Contáctenos</h5>
+            <button type="button" class="btn-close style26" data-bs-dismiss="modal" aria-label="Close" style="background: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23ffffff' d='M1.613.2l.094.083L5 3.585 8.293.293a1 1 0 0 1 1.414 0 1 1 0 0 1 .083 1.32l-.083.094L6.415 5l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L5 6.415 1.707 9.707A1 1 0 0 1 .21 8.387l.083-.094L3.585 5 .293 1.707a1 1 0 0 1 0-1.414A1 1 0 0 1 1.613.21z'/%3E%3C/svg%3E&quot;) no-repeat 50% 50% / 14px auto; -webkit-tap-highlight-color: rgba(0,0,0,0); box-shadow: 0 5px 20px rgba(#000, .15); transition: box-shadow .25s; color: white; /* border: 2px solid rgba(255, 255, 255, 0.1) */ /* z-index: 1000 */ border-radius: 50%; /* box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25) */ /* background: 283036 */">
+
+            </button>
+            <div class="popup__details">Operamos de lunes a viernes (10am-5pm EST). Los mensajes recibidos fuera del horario regular, por favor espere recibir respuesta al reanudar operaciones regulares.</div>
+            <form method="post" dmx-on:success="run([{run:{action:`modal1.hide();modal1.serverconnectform1.reset();toasts1.show({message: \'Gracias por su interés\', title: \'Mensaje enviado\'})`}},{run:{action:`serverconnect1.load()`}}])" action="/api/insert-contact-form" is="dmx-serverconnect-form" id="serverconnectform1">
+                <input id="contactname" name="name" type="text" class="form-control input-form input-from_dark style25 mb-2" placeholder="Ingrese su nombre" required="" data-msg-required="Este campo es requerido">
+                <input id="contactdatetime" name="datetime" class="form-control input-form input-from_dark style25 mb-2 visually-hidden" dmx-bind:value="var1.datetime">
+                <input id="pathname" name="pathname" class="form-control input-form input-from_dark style25 mb-2 visually-hidden" dmx-bind:value="browser1.location.pathname">
+                <input id="contactemail" name="email" type="email" class="form-control input-form input-from_dark style25 mb-2" placeholder="Ingrese su correo electrónico">
+                <select id="consultaselect" class="form-select input-form input-from_dark style25 mb-2" name="objetivo">
+                    <option selected="" value="No seleccionado">Objeto de la solicitud</option>
+                    <option value="Registro Empresa">Registro de Empresa</option>
+                    <option value="Tramitación EIN">Tramitación de EIN</option>
+                    <option value="Cuenta Bancaria">Cuenta Bancaria</option>
+                    <option value="Otros Servicios">Otros Servicios</option>
+                </select>
+                <textarea id="howcanwehelp" class="form-control input-form input-from_dark text-area style25 mb-2" placeholder="Cómo le podemos ayudar?" maxlength="400" data-msg-maxlength="Por favor ingrese un máximo de 400 caracteres." name="requerimiento"></textarea>
+
+                <div class="popup__btns">
+                    <button id="btn1" class="btn popup__btn btn btn_orange" data-effect="mfp-zoom-in" type="submit">Enviar</button>
+                </div>
+            </form>
+            <div class="popup__btns">
+            </div>
+            <div class="popup__note">Al hacer clic en el botón Enviar, acepta los términos de servicio y la política de privacidad.</div>
+
+        </div>
+    </div>
+</div>

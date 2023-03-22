@@ -1,0 +1,32 @@
+/usr/sbin/mysqld, Version: 8.0.31 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-01-21T05:59:55.352739Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2023-01-21T06:03:13.017165Z	    8 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-21T06:03:13.018708Z	    9 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-21T06:03:13.019562Z	   11 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-21T06:03:13.020812Z	   10 Connect	db_user@172.20.0.3 on apertura using TCP/IP
+2023-01-21T06:03:13.027483Z	    9 Query	select `users`.*, `company`.*, `user_role`.* from `users` inner join `company` on `company`.`companyid` = `users`.`company_id` inner join `user_role` on `user_role`.`id` = `users`.`user_role_id`
+2023-01-21T06:03:13.031229Z	   10 Query	select *, `authorsid` as `__dmxPrimary` from `authors`
+2023-01-21T06:03:13.031377Z	    8 Query	select * from `blog_posts`
+2023-01-21T06:03:13.032163Z	   11 Query	select *, `authorsid` as `__dmxPrimary` from `authors`
+2023-01-21T06:03:44.055681Z	    8 Quit	
+2023-01-21T06:03:44.056605Z	    9 Quit	
+2023-01-21T06:06:26.645724Z	   10 Query	select * from `faqs` where `faqs`.`tag` = '/planes-stripe.ejs'
+2023-01-21T06:12:39.492956Z	   12 Connect	root@172.20.0.1 on apertura using TCP/IP
+2023-01-21T06:12:39.499476Z	   12 Query	select `id`, `role_name` from `apertura`.`user_role` limit 100
+2023-01-21T06:12:39.535862Z	   12 Quit	
+2023-01-21T06:12:47.267354Z	   13 Connect	root@172.20.0.1 on apertura using TCP/IP
+2023-01-21T06:12:47.282267Z	   13 Query	select `id`, `Name`, `Category`, `Comments`, `Address_id` from `apertura`.`Customers` limit 100
+2023-01-21T06:12:47.290757Z	   13 Quit	
+2023-01-21T06:12:53.563641Z	   14 Connect	root@172.20.0.1 on apertura using TCP/IP
+2023-01-21T06:12:53.570264Z	   14 Query	select `id`, `make`, `model`, `year` from `apertura`.`cars` limit 100
+2023-01-21T06:12:53.720741Z	   14 Quit	
