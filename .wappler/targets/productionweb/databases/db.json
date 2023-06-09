@@ -4,8 +4,8 @@
   "connection": {
     "host": "104.248.62.167",
     "port": 9906,
-    "user": "root",
-    "password": "3ICok1za",
+    "user": "db_user",
+    "password": "nk9Nx9pT",
     "database": "apertura"
   },
   "schema": {

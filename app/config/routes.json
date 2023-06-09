@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "path": "/app-embarques",
+      "url": ""
+    },
+    {
       "path": "/politicas-y-terminos",
       "url": ""
     },

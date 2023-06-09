@@ -67,7 +67,6 @@
       "NodeImageType": "slim",
       "webLoggingMaxFiles": "5",
       "webLoggingMaxFileSize": "10m",
-      "dockerTimezone": "Etc/UTC",
       "databaseLoggingMaxFiles": "5",
       "databaseLoggingMaxFileSize": "10m",
       "databaseType": "mysql",
@@ -106,5 +105,6 @@
         }
       }
     }
-  }
+  },
+  "extensions": []
 }
